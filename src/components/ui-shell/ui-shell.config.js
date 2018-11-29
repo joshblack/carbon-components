@@ -317,6 +317,56 @@ module.exports = {
         },
       },
     },
+    {
+      name: 'Panels - floating right',
+      context: {
+        panel: {
+          visible: true,
+          type: 'floating',
+          side: 'right',
+        },
+      },
+    },
+    {
+      name: 'Panels - floating left',
+      context: {
+        panel: {
+          visible: true,
+          type: 'floating',
+          side: 'left',
+        },
+      },
+    },
+    {
+      name: 'Panels - inverse',
+      context: {
+        panel: {
+          visible: true,
+          type: 'floating',
+          side: 'right',
+          inverse: true,
+        },
+      },
+    },
+    {
+      name: 'Panels - fixed',
+      context: {
+        panel: {
+          visible: true,
+          type: 'fixed',
+          side: 'left',
+        },
+      },
+    },
+    {
+      name: 'Panels - flexible',
+      context: {
+        panel: {
+          type: 'flexible',
+          side: 'left',
+        },
+      },
+    },
   ],
 };
 

@@ -1,0 +1,31 @@
+{{#isnt panel.type 'flexible'}}
+  <div
+    class="
+    bx--panel
+    bx--panel--{{panel.type}}
+    {{#if panel.visible}}
+    bx--panel--visible
+    {{/if}}
+    bx--panel--{{panel.side}}
+    {{#if panel.inverse}}
+    bx--panel--inverse
+    {{/if}}
+    "></div>
+{{/isnt}}
+{{#is panel.type 'flexible'}}
+  <div class="bx--panel bx--panel--flexible">
+    <div class="bx--panel--flexible__content">
+      <div>Content</div>
+      <footer class="bx--panel--flexible__footer">
+        <button class="bx--side-nav__toggle" role="button" title="Close the side navigation menu">
+          <div class="bx--side-nav__icon">
+            <svg aria-hidden="true" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M22 16L12 26l-1.414-1.414L19.172 16l-8.586-8.586L12 6l10 10z"></path></svg>
+          </div>
+          <span class="bx--assistive-text">
+            Toggle the expansion state of the navigation
+          </span>
+        </button>
+      </footer>
+    </div>
+  </div>
+{{/is}}

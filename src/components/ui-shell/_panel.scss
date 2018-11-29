@@ -1,0 +1,78 @@
+@import '../../globals/scss/layout';
+@import '../../globals/scss/helper-mixins';
+@import '../../globals/scss/vars';
+@import '../../globals/scss/vendor/@carbon/layout/scss/mini-unit';
+@import 'theme';
+
+@mixin carbon-panel {
+  $panel--width: mini-units(32);
+  $panel--width--fixed: mini-units(26);
+
+  //----------------------------------------------------------------------------
+  // Panel
+  //----------------------------------------------------------------------------
+  .#{$prefix}--panel {
+    position: fixed;
+    top: mini-units(6);
+    bottom: 0;
+    will-change: transform;
+    // TODO: color sync
+    background-color: #252525;
+    z-index: z(overlay);
+  }
+
+  .#{$prefix}--panel--inverse {
+    // TODO: color sync
+    background-color: #f3f3f3;
+  }
+
+  //----------------------------------------------------------------------------
+  // Panel - Floating
+  //----------------------------------------------------------------------------
+  .#{$prefix}--panel--floating {
+    width: $panel--width;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25);
+  }
+
+  // Positioning
+  .#{$prefix}--panel--left {
+    left: 0;
+    transform: translate3d(-1 * $panel--width, 0, 0);
+  }
+
+  .#{$prefix}--panel--right {
+    right: 0;
+    transform: translate3d($panel--width, 0, 0);
+  }
+
+  //----------------------------------------------------------------------------
+  // Panel - Fixed
+  //----------------------------------------------------------------------------
+  .#{$prefix}--panel--fixed {
+    width: $panel--width--fixed;
+  }
+
+  .#{$prefix}--panel--fixed.#{$prefix}--panel--right {
+    transform: translate3d($panel--width--fixed, 0, 0);
+  }
+
+  .#{$prefix}--panel--fixed.#{$prefix}--panel--left {
+    transform: translate3d(-1 * $panel--width--fixed, 0, 0);
+  }
+
+  .#{$prefix}--panel--fixed.#{$prefix}--panel--visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  //----------------------------------------------------------------------------
+  // Panel - Flexible
+  //----------------------------------------------------------------------------
+  .#{$prefix}--panel--flexible {
+  }
+}
+
+@include exports('carbon-panel') {
+  @if feature-flag-enabled('ui-shell') {
+    @include carbon-panel;
+  }
+}

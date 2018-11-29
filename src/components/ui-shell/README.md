@@ -1,5 +1,21 @@
 # UI Shell
 
+## Components
+
+### Panel
+
+| Visible | Type     | Side  | Inverse | Effect                                       |
+| ------- | -------- | ----- | ------- | -------------------------------------------- |
+|         | any      | any   | any     | Not visible to user                          |
+| X       | any      | any   | X       | Inverse background color for visible panel   |
+| X       | any      | any   | any     | Visible to user                              |
+| X       | floating | any   | any     | Floating panel visible to user               |
+| X       | floating | left  | any     | Floating panel visible to user on left side  |
+| X       | floating | right | any     | Floating panel visible to user on right side |
+| X       | fixed    | any   | any     | Fixed panel visible to user                  |
+| X       | fixed    | left  | any     | Fixed panel visible to user on left side     |
+| X       | fixed    | right | any     | Fixed panel visible to user on right side    |
+
 ## Accessibility
 
 #### Header
