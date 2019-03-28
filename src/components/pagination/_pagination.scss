@@ -17,7 +17,7 @@ $css--helpers: true;
 @import '../text-input/text-input';
 
 @mixin pagination {
-  .#{$prefix}--data-table-container + .#{$prefix}--pagination {
+  .#{$prefix}--data-table-v2-container + .#{$prefix}--pagination {
     border-top: 0;
   }
 
