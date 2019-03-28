@@ -9,8 +9,8 @@
 @import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
 @import '../../globals/scss/vars';
 
-@include exports('data-table-v2-skeleton') {
-  .#{$prefix}--data-table-v2.#{$prefix}--skeleton {
+@include exports('data-table-skeleton') {
+  .#{$prefix}--data-table.#{$prefix}--skeleton {
     th {
       border-bottom: 1px solid $brand-01;
 
@@ -48,7 +48,7 @@
     }
   }
 
-  .#{$prefix}--data-table-v2.#{$prefix}--skeleton .#{$prefix}--table-sort-v2 {
+  .#{$prefix}--data-table.#{$prefix}--skeleton .#{$prefix}--table-sort {
     pointer-events: none;
   }
 }

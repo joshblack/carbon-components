@@ -24,7 +24,7 @@
   white-space: nowrap;
 }
 
-@include exports('data-table-v2-inline-edit-cell') {
+@include exports('data-table-inline-edit-cell') {
   // Spacing for cells that are the first in their row
   $spacing--columns--first: 1.5rem;
   // Spacing before columns in cell
@@ -66,7 +66,7 @@
   }
 
   td.#{$prefix}--data-table-cell--editable:last-of-type {
-    // Reset the styles inherited from data-table-v2 for padding-right styles
+    // Reset the styles inherited from data-table for padding-right styles
     // but adding our manual offset plus the spacing used before columns to get
     // a similar look for when an editable cell is in the middle of a table.
     padding-right: #{$spacing--cell--activity + $spacing--columns--before};

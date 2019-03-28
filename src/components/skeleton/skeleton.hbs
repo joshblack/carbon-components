@@ -29,14 +29,15 @@
 <p>Breadcrumb</p>
 <div class="{{@root.prefix}}--breadcrumb {{@root.prefix}}--skeleton">
   {{#each breadCrumbItems}}
-    <div class="{{@root.prefix}}--breadcrumb-item">
-      <a href="/#" class="{{@root.prefix}}--link">&nbsp;</a>
-    </div>
+  <div class="{{@root.prefix}}--breadcrumb-item">
+    <a href="/#" class="{{@root.prefix}}--link">&nbsp;</a>
+  </div>
   {{/each}}
 </div>
 
 <p>Dropdown</p>
-<div class="{{@root.prefix}}--skeleton {{@root.prefix}}--dropdown-v2 {{@root.prefix}}--list-box {{@root.prefix}}--form-item">
+<div
+  class="{{@root.prefix}}--skeleton {{@root.prefix}}--dropdown {{@root.prefix}}--list-box {{@root.prefix}}--form-item">
   <div role="button" class="{{@root.prefix}}--list-box__field">
     <span class="{{@root.prefix}}--list-box__label"></span>
   </div>
@@ -45,15 +46,15 @@
 <p>Progress Indicator</p>
 <ul class="{{@root.prefix}}--progress {{@root.prefix}}--skeleton">
   {{#each progressIndicatorItems}}
-    <li class="{{@root.prefix}}--progress-step {{@root.prefix}}--progress-step--incomplete">
-      <svg>
-        <g>
-          <circle cx="12" cy="12" r="12"></circle>
-        </g>
-      </svg>
-      <p class="{{@root.prefix}}--progress-label"></p>
-      <span class="{{@root.prefix}}--progress-line"></span>
-    </li>
+  <li class="{{@root.prefix}}--progress-step {{@root.prefix}}--progress-step--incomplete">
+    <svg>
+      <g>
+        <circle cx="12" cy="12" r="12"></circle>
+      </g>
+    </svg>
+    <p class="{{@root.prefix}}--progress-label"></p>
+    <span class="{{@root.prefix}}--progress-line"></span>
+  </li>
   {{/each}}
 </ul>
 
@@ -61,21 +62,28 @@
 <div class="{{@root.prefix}}--form-item">
   <input type="checkbox" class="{{@root.prefix}}--toggle {{@root.prefix}}--skeleton" value="on">
   <label class="{{@root.prefix}}--toggle__label {{@root.prefix}}--skeleton">
-    <span class="{{@root.prefix}}--toggle__text--left"></span><span class="{{@root.prefix}}--toggle__appearance"></span><span class="{{@root.prefix}}--toggle__text--right"></span>
+    <span class="{{@root.prefix}}--toggle__text--left"></span><span
+      class="{{@root.prefix}}--toggle__appearance"></span><span class="{{@root.prefix}}--toggle__text--right"></span>
   </label>
 </div>
 
 <p>Small Toggle</p>
 <div class="{{@root.prefix}}--form-item">
-  <input type="checkbox" class="{{@root.prefix}}--toggle {{@root.prefix}}--toggle--small {{@root.prefix}}--skeleton" value="on">
-  <label class="{{@root.prefix}}--toggle__label {{@root.prefix}}--skeleton"><span class="{{@root.prefix}}--toggle__appearance"><svg class="{{@root.prefix}}--toggle__check" width="6px" height="5px" viewBox="0 0 6 5"><path d="M2.2403 2.7299L4.9245 0 6 1.1117 2.2384 5 0 2.6863 1.0612 1.511z"></path></svg></span>
+  <input type="checkbox" class="{{@root.prefix}}--toggle {{@root.prefix}}--toggle--small {{@root.prefix}}--skeleton"
+    value="on">
+  <label class="{{@root.prefix}}--toggle__label {{@root.prefix}}--skeleton"><span
+      class="{{@root.prefix}}--toggle__appearance"><svg class="{{@root.prefix}}--toggle__check" width="6px" height="5px"
+        viewBox="0 0 6 5">
+        <path d="M2.2403 2.7299L4.9245 0 6 1.1117 2.2384 5 0 2.6863 1.0612 1.511z"></path>
+      </svg></span>
   </label>
 </div>
 
 <p>Slider</p>
 <div class="{{@root.prefix}}--form-item">
   <label class="{{@root.prefix}}--label {{@root.prefix}}--skeleton"></label>
-  <div class="{{@root.prefix}}--slider-container {{@root.prefix}}--skeleton"><span class="{{@root.prefix}}--slider__range-label"></span>
+  <div class="{{@root.prefix}}--slider-container {{@root.prefix}}--skeleton"><span
+      class="{{@root.prefix}}--slider__range-label"></span>
     <div class="{{@root.prefix}}--slider">
       <div class="{{@root.prefix}}--slider__track"></div>
       <div class="{{@root.prefix}}--slider__filled-track"></div>
@@ -89,15 +97,17 @@
 
 <p>Tabs</p>
 <nav class="{{@root.prefix}}--tabs {{@root.prefix}}--skeleton">
-  <div class="{{@root.prefix}}--tabs-trigger"><a href="javascript:void(0)" class="{{@root.prefix}}--tabs-trigger-text">&nbsp;</a>
+  <div class="{{@root.prefix}}--tabs-trigger"><a href="javascript:void(0)"
+      class="{{@root.prefix}}--tabs-trigger-text">&nbsp;</a>
     <svg width="10" height="5" viewBox="0 0 10 5" fill-rule="evenodd">
       <path d="M10 0L5 5 0 0z"></path>
     </svg>
   </div>
   <ul class="{{@root.prefix}}--tabs__nav {{@root.prefix}}--tabs__nav--hidden">
     {{#each tabItems}}
-      <li class="{{@root.prefix}}--tabs__nav-item{{#if selected}} {{@root.prefix}}--tabs__nav-item--selected{{/if}}"><a class="{{@root.prefix}}--tabs__nav-link" href="javascript:void(0)">&nbsp;</a>
-      </li>
+    <li class="{{@root.prefix}}--tabs__nav-item{{#if selected}} {{@root.prefix}}--tabs__nav-item--selected{{/if}}"><a
+        class="{{@root.prefix}}--tabs__nav-link" href="javascript:void(0)">&nbsp;</a>
+    </li>
     {{/each}}
   </ul>
 </nav>
@@ -114,7 +124,7 @@
 </div>
 
 <p>Data Table</p>
-<table class="{{@root.prefix}}--skeleton {{@root.prefix}}--data-table-v2">
+<table class="{{@root.prefix}}--skeleton {{@root.prefix}}--data-table">
   <thead>
     <tr>
       <th></th>
