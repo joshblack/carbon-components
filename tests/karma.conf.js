@@ -221,7 +221,7 @@ module.exports = function(config) {
                   'src/components/carousel/carousel.js', // Removed for `v10`
                   'src/components/code-snippet/code-snippet.js',
                   'src/components/copy-button/copy-button.js',
-                  'src/components/data-table/data-table.js', // Removed for `v10`
+                  'src/components/data-table/data-table.js', // TODO: remove after v10 is released
                   'src/components/detail-page-header/detail-page-header.js',
                   'src/components/fab/fab.js', // Removed for `v10`
                   'src/components/interior-left-nav/interior-left-nav.js', // Removed for `v10`
@@ -229,7 +229,6 @@ module.exports = function(config) {
                   'src/components/pagination/pagination.js',
                   'src/components/unified-header/left-nav.js', // Removed for `v10`
                   'src/components/unified-header/profile-switcher.js', // Removed for `v10`
-                  'src/components/data-table-v2/data-table-v2.js', // to-do: remove when v9 is deprecated
                 ],
               },
             },
