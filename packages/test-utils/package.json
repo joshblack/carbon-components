@@ -19,5 +19,10 @@
   },
   "devDependencies": {
     "node-sass": "^4.11.0"
+  },
+  "dependencies": {
+    "rollup": "^1.11.3",
+    "rollup-plugin-virtual": "^1.0.1",
+    "terser": "^3.17.0"
   }
 }
