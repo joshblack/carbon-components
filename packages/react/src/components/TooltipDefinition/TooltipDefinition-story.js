@@ -24,10 +24,10 @@ const alignments = {
 
 const props = () => ({
   direction: select('Tooltip direction (direction)', directions, 'bottom'),
-  alignment: select(
-    'Tooltip alignment to trigger button (alignment)',
+  align: select(
+    'Tooltip alignment to trigger button (align)',
     alignments,
-    'left'
+    'start'
   ),
   tooltipText: text(
     'Tooltip content (tooltipText)',
