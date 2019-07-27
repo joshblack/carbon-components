@@ -41,6 +41,9 @@ Row.propTypes = {
    */
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 
+  /**
+   * Provide a custom className to be applied to the containing node
+   */
   className: PropTypes.string,
 
   /**

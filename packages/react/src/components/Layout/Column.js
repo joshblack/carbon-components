@@ -22,12 +22,12 @@ function Column({
   noGutterRight,
   ...rest
 }) {
-  const columnsPerBreakpoint = mapBreakpointObjectToArray(span).map(
+  const columnsPerBreakpoint = mapBreakpointsToArray(span).map(
     (columnCount, i) => {
       return `${prefix}--col-${breakpoints[i]}-${columnCount}`;
     }
   );
-  const offsetsPerBreakpoint = mapBreakpointObjectToArray(offset).map(
+  const offsetsPerBreakpoint = mapBreakpointsToArray(offset).map(
     (offsetCount, i) => {
       return `${prefix}--offset-${breakpoints[i]}-${offsetCount}`;
     }
@@ -51,9 +51,39 @@ function Column({
   });
 }
 
+const breakpointPropType = PropTypes.oneOfType([
+  PropTypes.arrayOf(PropTypes.number),
+  PropTypes.shape({
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number,
+    xlg: PropTypes.number,
+    max: PropTypes.number,
+  }),
+]);
+
+Column.propTypes = {
+  /**
+   * Provide a custom element to render instead of the default <div>
+   */
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+
+  /**
+   * Provide a custom className to be applied to the containing node
+   */
+  className: PropTypes.string,
+
+  offset: breakpointPropType,
+  span: breakpointPropType,
+
+  noGutter: PropTypes.bool,
+  noGutterLeft: PropTypes.bool,
+  noGutterRight: PropTypes.bool,
+};
+
 const breakpoints = ['sm', 'md', 'lg', 'xlg', 'max'];
 
-function mapBreakpointObjectToArray(object) {
+function mapBreakpointsToArray(object) {
   if (Array.isArray(object)) {
     return object;
   }

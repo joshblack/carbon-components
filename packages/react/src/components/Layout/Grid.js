@@ -37,6 +37,9 @@ Grid.propTypes = {
    */
   as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 
+  /**
+   * Provide a custom className to be applied to the containing node
+   */
   className: PropTypes.string,
 
   /**
@@ -45,7 +48,7 @@ Grid.propTypes = {
   isCondensed: PropTypes.bool,
 
   /**
-   * Specify if the grid should span full-dith at the maximum breakpoint
+   * Specify if the grid should span full-width at the maximum breakpoint
    */
   fullWidth: PropTypes.bool,
 };
