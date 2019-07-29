@@ -15,13 +15,13 @@ const { prefix } = settings;
 function Grid({
   as = 'div',
   className: customClassName,
-  isCondensed,
+  condensed,
   fullWidth,
   ...rest
 }) {
   const className = cx({
     [`${prefix}--grid`]: true,
-    [`${prefix}--grid--condensed`]: isCondensed,
+    [`${prefix}--grid--condensed`]: condensed,
     [`${prefix}--grid--full-width`]: fullWidth,
     [customClassName]: !!customClassName,
   });
@@ -45,7 +45,7 @@ Grid.propTypes = {
   /**
    * Specify if the grid should be rendered as a condensed grid
    */
-  isCondensed: PropTypes.bool,
+  condensed: PropTypes.bool,
 
   /**
    * Specify if the grid should span full-width at the maximum breakpoint

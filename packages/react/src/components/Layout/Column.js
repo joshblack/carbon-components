@@ -5,9 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { breakpoints as gridBreakpoints } from '@carbon/layout';
 import { settings } from 'carbon-components';
 import cx from 'classnames';
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 const { prefix } = settings;
@@ -81,7 +82,7 @@ Column.propTypes = {
   noGutterRight: PropTypes.bool,
 };
 
-const breakpoints = ['sm', 'md', 'lg', 'xlg', 'max'];
+const breakpoints = Object.keys(gridBreakpoints);
 
 function mapBreakpointsToArray(object) {
   if (Array.isArray(object)) {

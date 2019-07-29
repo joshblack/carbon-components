@@ -14,13 +14,6 @@ import { Grid, Row, Column } from '../Layout';
 
 function DemoFullPage({ children }) {
   const [portalNode, setPortalNode] = useState(null);
-  const style = {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  };
 
   useEffect(() => {
     const node = document.createElement('div');
@@ -32,14 +25,10 @@ function DemoFullPage({ children }) {
       document.body.removeChild(node);
     };
   }, []);
+
   return (
     portalNode &&
-    ReactDOM.createPortal(
-      <div className="example" style={style}>
-        {children}
-      </div>,
-      portalNode
-    )
+    ReactDOM.createPortal(<div className="example">{children}</div>, portalNode)
   );
 }
 
@@ -126,7 +115,7 @@ storiesOf('Layout/Grid', module)
     </Grid>
   ))
   .add('condensed', () => (
-    <Grid isCondensed>
+    <Grid condensed>
       <Row>
         <Column>
           <DemoContent>1/4</DemoContent>
@@ -159,7 +148,7 @@ storiesOf('Layout/Grid', module)
           <DemoContent>1/4</DemoContent>
         </Column>
       </Row>
-      <Row isCondensed>
+      <Row condensed>
         <Column>
           <DemoContent>1/4</DemoContent>
         </Column>
