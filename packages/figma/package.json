@@ -1,0 +1,25 @@
+{
+  "name": "@carbon/figma",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "yarn clean && rollup -c",
+    "clean": "rimraf es lib umd",
+    "watch": "yarn clean && rollup -c -w"
+  },
+  "dependencies": {
+    "@carbon/colors": "10.3.0",
+    "@carbon/themes": "10.4.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.5",
+    "core-js": "^3.2.0",
+    "regenerator-runtime": "^0.13.3",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.19.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Carbon",
+  "api": "1.0.0",
+  "main": "umd/index.js",
+  "menu": [
+    {
+      "name": "Colors",
+      "menu": [
+        {
+          "name": "Generate page",
+          "command": "carbon.elements.colors.generate"
+        }
+      ]
+    }
+  ]
+}
