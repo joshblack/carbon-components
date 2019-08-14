@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    // Output options
+    "noEmit": true,
+    "strict": true,
+    "lib": ["esnext.array"],
+    "types": ["node"],
+
+    // Additional checks
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // Module resolution
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["./packages/icon-cli/src/**/*"],
+  "exclude": [
+    "**/build/**",
+    "**/es/**",
+    "**/lib/**",
+    "**/node_modules/**",
+    "**/umd/**",
+    "**/__tests__/**",
+    "**/__testfixtures__/**",
+    "**/__fixtures__/**",
+    ".yarn/releases/*"
+  ],
+}
