@@ -26,7 +26,7 @@ const prettierOptions = {
   proseWrap: 'always',
 };
 
-async function buildIcons(source, { cwd } = {}) {
+async function builder(source, { cwd } = {}) {
   const optimized = await optimize(source, { cwd });
 
   reporter.info(`Building the module source for ${optimized.length} icons...`);
@@ -174,7 +174,7 @@ async function buildIcons(source, { cwd } = {}) {
     })
   );
 
-  const formattedOutput = files.map(file => {
+  const formattedOutput = inputs.map(input => {
     const {
       filename,
       basename,
@@ -183,7 +183,8 @@ async function buildIcons(source, { cwd } = {}) {
       descriptor,
       moduleName,
       original,
-    } = file;
+      filepath,
+    } = input;
     return {
       filename,
       basename,
@@ -192,6 +193,9 @@ async function buildIcons(source, { cwd } = {}) {
       descriptor,
       moduleName,
       original,
+      outputOptions: {
+        file: path.join('es', filepath),
+      },
     };
   });
 
@@ -212,14 +216,20 @@ function getModuleName(name, size, prefixParts, descriptor) {
   const isGlyph = width < 16 || height < 16;
 
   if (prefix !== '') {
-    if (!size && isGlyph) {
-      return prefix + pascal(name) + 'Glyph';
+    if (!size) {
+      if (isGlyph) {
+        return prefix + pascal(name) + 'Glyph';
+      }
+      return prefix + pascal(name);
     }
     return prefix + pascal(name) + size;
   }
 
-  if (!size && isGlyph) {
-    return pascal(name) + 'Glyph';
+  if (!size) {
+    if (isGlyph) {
+      return pascal(name) + 'Glyph';
+    }
+    return pascal(name);
   }
 
   if (isNaN(name[0])) {
@@ -278,4 +288,4 @@ function getIndexName(basename, prefix) {
     .join('/');
 }
 
-module.exports = buildIcons;
+module.exports = builder;
