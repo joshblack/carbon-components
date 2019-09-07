@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { useEffect, useMemo } from 'react';
+import throttle from 'lodash.throttle';
 import { useEventListener } from './useEventListener';
 import { useForceUpdate } from './useForceUpdate';
 import { usePassive } from './usePassive';
@@ -25,17 +27,36 @@ const canUseDOM = !!(
  */
 function useWindowEvent(name, options) {
   const forceUpdate = useForceUpdate();
+  // const updater = useMemo(() => throttle(forceUpdate, 300), [forceUpdate]);
   useEventListener(window, name, forceUpdate, options);
+}
+
+function identity(fn) {
+  return fn;
 }
 
 /**
  * Provides `window.{scrollX,scrollY}` values that are guaranteed to be
  * up-to-date whenever the browser is scrolled
  */
-export function useWindowScroll() {
+export function useWindowScroll(decorateUpdater = identity, cleanup) {
+  const forceUpdate = useForceUpdate();
   const supportsPassive = usePassive();
   const options = supportsPassive ? { passive: true } : undefined;
-  useWindowEvent('scroll', options);
+  const updater = useMemo(() => decorateUpdater(forceUpdate), [
+    decorateUpdater,
+    forceUpdate,
+  ]);
+
+  useEventListener(window, 'scroll', updater, options);
+
+  useEffect(() => {
+    if (cleanup) {
+      cleanup(updater);
+    }
+  }, [updater]);
+
+  // useWindowEvent('scroll', options);
 
   if (canUseDOM) {
     return {
