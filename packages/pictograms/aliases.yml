@@ -1,0 +1,1328 @@
+aliases:
+  - terms:
+      - active
+    members:
+      - active--server
+  - terms:
+      - advocate
+    members:
+      - advocate
+  - terms:
+      - agriculture
+    members:
+      - agriculture
+  - terms:
+      - air
+    members:
+      - air--conditioner
+  - terms:
+      - airplane
+    members:
+      - airplane
+  - terms:
+      - alarm
+    members:
+      - alarm
+  - terms:
+      - alchemy
+    members:
+      - alchemy--data--news
+      - alchemy--language--alphabet--a--expanded
+      - alchemy--language
+      - alchemy--vision
+  - terms:
+      - americas
+    members:
+      - americas
+  - terms:
+      - amsterdam
+    members:
+      - amsterdam--canal
+      - amsterdam--farm
+      - amsterdam--windmill
+  - terms:
+      - analyze
+    members:
+      - analyze
+  - terms:
+      - analyzes
+    members:
+      - analyzes--data
+  - terms:
+      - apartment
+    members:
+      - apartment
+  - terms:
+      - api
+    members:
+      - api
+  - terms:
+      - app
+    members:
+      - app--developer
+  - terms:
+      - apple
+    members:
+      - apple
+  - terms:
+      - application
+    members:
+      - application
+  - terms:
+      - archive
+    members:
+      - archive
+  - terms:
+      - asia
+    members:
+      - asia--australia
+  - terms:
+      - augmented
+    members:
+      - augmented--reality
+  - terms:
+      - austin
+    members:
+      - austin
+  - terms:
+      - automate
+    members:
+      - automate--modular--management
+  - terms:
+      - automobile
+    members:
+      - automobile
+  - terms:
+      - bag
+    members:
+      - bag
+  - terms:
+      - bangalore
+    members:
+      - bangalore
+  - terms:
+      - bee
+    members:
+      - bee
+  - terms:
+      - beijing
+    members:
+      - beijing--municipal
+      - beijing--tower
+  - terms:
+      - berlin
+    members:
+      - berlin--brandenburg
+      - berlin--cathedral
+      - berlin--tower
+  - terms:
+      - bicycle
+    members:
+      - bicycle
+  - terms:
+      - block
+    members:
+      - blockchain
+  - terms:
+      - build
+    members:
+      - build
+  - terms:
+      - building
+    members:
+      - building
+  - terms:
+      - bulldozer
+    members:
+      - bulldozer
+  - terms:
+      - bus
+    members:
+      - bus
+  - terms:
+      - cafe
+    members:
+      - cafe
+  - terms:
+      - calendar
+    members:
+      - calendar
+      - calendar--date
+      - calendar--event
+  - terms:
+      - camera
+    members:
+      - camera
+  - terms:
+      - capitol
+    members:
+      - capitol
+  - terms:
+      - care
+    members:
+      - care
+  - terms:
+      - cell
+    members:
+      - cell
+  - terms:
+      - chart
+    members:
+      - chart--bar
+      - chart--bubble--line
+      - chart--line
+      - chart--scatterplot
+  - terms:
+      - cherries
+    members:
+      - cherries
+  - terms:
+      - chip
+    members:
+      - chip--circuit
+      - chip--credit
+      - chip--debit
+  - terms:
+      - cloud
+    members:
+      - cloud--analytics
+      - cloud--assets
+      - cloud--builder--professional--services
+      - cloud--computing
+      - cloud--data--services
+      - cloud--download
+      - cloud--ecosystem
+      - cloud--guidelines
+      - cloud--managed--services
+      - cloud--oracle
+      - cloud--partners
+      - cloud--planning
+      - cloud--sap
+      - cloud--services--pricing
+      - cloud--services
+      - cloud--storage
+      - cloud--strategy
+      - cloud--tutorials
+      - cloud--upload
+      - cloud--vmware
+  - terms:
+      - cloudy
+    members:
+      - cloudy
+      - cloudy--dewy
+      - cloudy--hazy
+      - cloudy--humid
+      - cloudy--partial
+      - cloudy--windy
+  - terms:
+      - coat
+    members:
+      - coat--hanger
+  - terms:
+      - cognos
+    members:
+      - cognos--analytics
+  - terms:
+      - college
+    members:
+      - college
+  - terms:
+      - concept
+    members:
+      - concept--expansion
+      - concept--insights
+  - terms:
+      - connect
+    members:
+      - connect
+  - terms:
+      - console
+    members:
+      - console
+      - console--wireless
+  - terms:
+      - construct
+    members:
+      - construct
+  - terms:
+      - conversation
+    members:
+      - conversation
+  - terms:
+      - copenhagen
+    members:
+      - copenhagen--planetarium
+      - copenhagen--snekkja
+  - terms:
+      - credit
+    members:
+      - credit--card
+  - terms:
+      - crop
+    members:
+      - crop
+  - terms:
+      - customer
+    members:
+      - customer--service
+  - terms:
+      - data
+    members:
+      - data--backup
+      - data--insights
+      - data--processing
+      - data--storage
+  - terms:
+      - delete
+    members:
+      - delete
+  - terms:
+      - deliver
+    members:
+      - deliver--insights
+  - terms:
+      - delivery
+    members:
+      - delivery--truck
+  - terms:
+      - design
+    members:
+      - design--and--development--01
+      - design--and--development--02
+  - terms:
+      - desktop
+    members:
+      - desktop
+  - terms:
+      - devops
+    members:
+      - devops
+  - terms:
+      - dialogue
+    members:
+      - dialogue
+  - terms:
+      - digital
+    members:
+      - digital
+  - terms:
+      - dining
+    members:
+      - dining
+  - terms:
+      - dna
+    members:
+      - dna
+  - terms:
+      - do
+    members:
+      - do--not
+  - terms:
+      - docker
+    members:
+      - docker
+  - terms:
+      - doctor
+    members:
+      - doctor
+  - terms:
+      - document
+    members:
+      - document--conversion
+  - terms:
+      - door
+    members:
+      - door--handle
+  - terms:
+      - download
+    members:
+      - download
+      - download--alt
+  - terms:
+      - dubai
+    members:
+      - dubai--palm--islands
+      - dubai--skyscraper
+  - terms:
+      - dublin
+    members:
+      - dublin--brewery
+      - dublin--castle
+  - terms:
+      - duplicate
+    members:
+      - duplicate--file
+  - terms:
+      - education
+    members:
+      - education
+  - terms:
+      - electric
+    members:
+      - electric
+      - electric--charge
+  - terms:
+      - elevator
+    members:
+      - elevator
+  - terms:
+      - embed
+    members:
+      - embed
+  - terms:
+      - engine
+    members:
+      - engine
+  - terms:
+      - enterprise
+    members:
+      - enterprise--design--thinking--alt
+      - enterprise--design--thinking
+  - terms:
+      - envelope
+    members:
+      - envelope
+  - terms:
+      - erlenmeyer
+    members:
+      - erlenmeyer--flask
+  - terms:
+      - escalator
+    members:
+      - escalator--down
+      - escalator--up
+  - terms:
+      - europe
+      - africa
+    members:
+      - europe-africa
+  - terms:
+      - expand
+    members:
+      - expand--horz
+      - expand--user
+      - expand--vert
+  - terms:
+      - export
+    members:
+      - export
+      - export--alt
+  - terms:
+      - eye
+    members:
+      - eye
+  - terms:
+      - face
+    members:
+      - face--dissatisfied
+      - face--neutral
+      - face--satisfied
+      - face--very--dissatisfied
+      - face--very--satisfied
+  - terms:
+      - factory
+    members:
+      - factory
+  - terms:
+      - farm
+    members:
+      - farm
+  - terms:
+      - faucet
+    members:
+      - faucet
+  - terms:
+      - feedback
+    members:
+      - feedback
+  - terms:
+      - file
+    members:
+      - file--backup
+      - file--transfer
+  - terms:
+      - financial
+    members:
+      - financial--consultant
+      - financial--gain
+      - financial--news
+  - terms:
+      - fire
+    members:
+      - fire--alarm
+      - fire--extinguisher
+  - terms:
+      - firewall
+    members:
+      - firewall
+  - terms:
+      - flow
+    members:
+      - flow--chart--detail
+      - flow--chart
+  - terms:
+      - fog
+    members:
+      - fog
+  - terms:
+      - folder
+    members:
+      - folder
+  - terms:
+      - forklift
+    members:
+      - forklift
+  - terms:
+      - free
+    members:
+      - free--trial
+  - terms:
+      - fuel
+    members:
+      - fuel
+  - terms:
+      - gear
+    members:
+      - gear
+  - terms:
+      - global
+    members:
+      - global--business--services
+      - global--finance--euro
+      - global--finance--sterling
+      - global--network
+      - global--technology--services
+  - terms:
+      - globe
+    members:
+      - globe
+      - globe--locations
+  - terms:
+      - group
+    members:
+      - group
+  - terms:
+      - hail
+    members:
+      - hail
+      - hail--heavy
+      - hail--mixed
+  - terms:
+      - handicap
+    members:
+      - handicap
+      - handicap--active
+  - terms:
+      - hard
+    members:
+      - hard--drive--network
+      - hard--drive
+      - hard--ice--cream
+  - terms:
+      - hazy
+    members:
+      - hazy
+  - terms:
+      - headphones
+    members:
+      - headphones
+  - terms:
+      - heart
+    members:
+      - heart
+      - heart--health
+  - terms:
+      - heat
+    members:
+      - heat--map
+  - terms:
+      - high
+    members:
+      - high--five
+  - terms:
+      - home
+    members:
+      - home--front
+      - home--garage
+      - home--profile
+  - terms:
+      - hospital
+    members:
+      - hospital
+  - terms:
+      - humid
+    members:
+      - humid
+  - terms:
+      - hurricane
+    members:
+      - hurricane
+  - terms:
+      - hybrid
+    members:
+      - hybrid--cloud--services
+      - hybrid--cloud
+  - terms:
+      - ibm
+    members:
+      - ibm--ix
+      - ibm--z
+  - terms:
+      - idea
+    members:
+      - idea
+  - terms:
+      - ideate
+    members:
+      - ideate
+  - terms:
+      - innovate
+    members:
+      - innovate
+  - terms:
+      - integration
+    members:
+      - integration
+  - terms:
+      - intelligence
+    members:
+      - intelligence
+  - terms:
+      - intercom
+    members:
+      - intercom
+  - terms:
+      - iot
+    members:
+      - iot--munich
+  - terms:
+      - java
+    members:
+      - java
+  - terms:
+      - javascript
+    members:
+      - javascript
+  - terms:
+      - justice
+    members:
+      - justice
+  - terms:
+      - key
+    members:
+      - key--users
+  - terms:
+      - knows
+    members:
+      - knows--dark--data
+  - terms:
+      - language
+    members:
+      - language
+      - language--01
+      - language--02
+      - language--03
+      - language--04
+      - language--translation--alphabet--a--expanded
+      - language--translation
+  - terms:
+      - launch
+    members:
+      - launch
+  - terms:
+      - lightning
+    members:
+      - lightning
+  - terms:
+      - list
+    members:
+      - list--bullet
+      - list--checkbox
+  - terms:
+      - location
+    members:
+      - location
+  - terms:
+      - lock
+    members:
+      - lock
+      - lock--alt
+  - terms:
+      - locked
+    members:
+      - locked--network--alt
+      - locked--network
+  - terms:
+      - london
+    members:
+      - london
+      - london--big--ben
+      - london--expanded--base
+  - terms:
+      - lungs
+    members:
+      - lungs
+  - terms:
+      - machine
+    members:
+      - machine--learning--01
+      - machine--learning--02
+      - machine--learning--03
+      - machine--learning--04
+      - machine--learning--05
+      - machine--learning--06
+  - terms:
+      - madrid
+    members:
+      - madrid--cathedral
+      - madrid--skyscrapers
+      - madrid--statue
+  - terms:
+      - magnify
+    members:
+      - magnify
+  - terms:
+      - marketplace
+    members:
+      - marketplace
+  - terms:
+      - mas
+    members:
+      - mas
+  - terms:
+      - maximize
+    members:
+      - maximize
+  - terms:
+      - medical
+    members:
+      - medical
+      - medical--charts
+      - medical--staff
+  - terms:
+      - melbourne
+    members:
+      - melbourne
+  - terms:
+      - meter
+    members:
+      - meter
+  - terms:
+      - microorganisms
+    members:
+      - microorganisms
+  - terms:
+      - microscope
+    members:
+      - microscope
+  - terms:
+      - minimize
+    members:
+      - minimize
+  - terms:
+      - mobile
+    members:
+      - mobile--add
+      - mobile--chat
+      - mobile--devices
+      - mobile--phone
+  - terms:
+      - mortar
+    members:
+      - mortar--and--pestle
+  - terms:
+      - moscow
+    members:
+      - moscow
+  - terms:
+      - mqa
+    members:
+      - mqa
+  - terms:
+      - multitask
+    members:
+      - multitask
+  - terms:
+      - munich
+    members:
+      - munich
+  - terms:
+      - natural
+    members:
+      - natural--language--classifier
+  - terms:
+      - network
+    members:
+      - network
+      - network--services
+  - terms:
+      - networking
+    members:
+      - networking--01
+      - networking--02
+      - networking--03
+      - networking--04
+      - networking--05
+  - terms:
+      - nice
+    members:
+      - nice
+  - terms:
+      - night
+    members:
+      - night--clear
+  - terms:
+      - nyc
+    members:
+      - nyc--brooklyn
+      - nyc--manhattan--alt
+      - nyc--manhattan
+  - terms:
+      - office
+    members:
+      - office
+  - terms:
+      - oil
+    members:
+      - oil--pump
+      - oil--rig
+  - terms:
+      - overcast
+    members:
+      - overcast
+  - terms:
+      - paper
+    members:
+      - paper--clip
+  - terms:
+      - parliament
+    members:
+      - parliament
+  - terms:
+      - partner
+    members:
+      - partner--relationship
+  - terms:
+      - path
+    members:
+      - path
+  - terms:
+      - pattern
+    members:
+      - pattern
+  - terms:
+      - perfume
+    members:
+      - perfume
+  - terms:
+      - person
+    members:
+      - person--01
+      - person--02
+      - person--03
+      - person--04
+      - person--05
+      - person--06
+      - person--07
+      - person--08
+      - person--09
+  - terms:
+      - personality
+    members:
+      - personality--insights
+  - terms:
+      - petri
+    members:
+      - petri--culture
+  - terms:
+      - pill
+    members:
+      - pill--bottle--01
+  - terms:
+      - pills
+    members:
+      - pills
+  - terms:
+      - podcast
+    members:
+      - podcast
+  - terms:
+      - police
+    members:
+      - police
+  - terms:
+      - power
+    members:
+      - power
+  - terms:
+      - presentation
+    members:
+      - presentation
+  - terms:
+      - presenter
+    members:
+      - presenter
+  - terms:
+      - price
+    members:
+      - price
+  - terms:
+      - printer
+    members:
+      - printer
+  - terms:
+      - private
+    members:
+      - private--network--01
+      - private--network--alt--01
+      - private--network--alt
+      - private--network
+  - terms:
+      - progress
+    members:
+      - progress
+  - terms:
+      - puzzle
+    members:
+      - puzzle
+  - terms:
+      - question
+    members:
+      - question
+      - question--and--answer
+  - terms:
+      - rainy
+    members:
+      - rainy
+      - rainy--heavy
+  - terms:
+      - rank
+    members:
+      - rank
+  - terms:
+      - receipt
+    members:
+      - receipt
+  - terms:
+      - recycle
+    members:
+      - recycle
+  - terms:
+      - refinery
+    members:
+      - refinery
+  - terms:
+      - refresh
+    members:
+      - refresh
+  - terms:
+      - relationship
+    members:
+      - relationship--extraction
+  - terms:
+      - renew
+    members:
+      - renew
+      - renew--team
+  - terms:
+      - repeat
+    members:
+      - repeat
+  - terms:
+      - report
+    members:
+      - report
+  - terms:
+      - reset
+    members:
+      - reset
+      - reset--hybrid--cloud
+      - reset--settings
+  - terms:
+      - retrieve
+    members:
+      - retrieve--and--rank
+  - terms:
+      - rich
+    members:
+      - rich--text--format
+  - terms:
+      - robot
+    members:
+      - robot
+  - terms:
+      - robotics
+    members:
+      - robotics
+  - terms:
+      - rome
+    members:
+      - rome
+  - terms:
+      - saas
+    members:
+      - saas--enablement
+  - terms:
+      - san
+    members:
+      - san--francisco
+      - san--francisco--fog
+  - terms:
+      - sao
+    members:
+      - sao--paulo--expanded--base
+      - sao--paulo
+  - terms:
+      - satellite
+    members:
+      - satellite
+      - satellite--dish
+  - terms:
+      - scale
+    members:
+      - scale
+  - terms:
+      - seattle
+    members:
+      - seattle
+  - terms:
+      - secure
+    members:
+      - secure--data
+      - secure--profile
+  - terms:
+      - security
+    members:
+      - security
+      - security--shield
+  - terms:
+      - server
+    members:
+      - server--rack
+  - terms:
+      - servers
+    members:
+      - servers
+  - terms:
+      - shop
+    members:
+      - shop
+  - terms:
+      - shopping
+    members:
+      - shopping--cart
+  - terms:
+      - shower
+    members:
+      - shower
+  - terms:
+      - singapore
+    members:
+      - singapore
+  - terms:
+      - single
+    members:
+      - single--sign-on
+  - terms:
+      - slider
+    members:
+      - slider
+  - terms:
+      - sneaker
+    members:
+      - sneaker
+  - terms:
+      - snow
+    members:
+      - snow
+  - terms:
+      - soft
+    members:
+      - soft--ice--cream
+  - terms:
+      - softlayer
+    members:
+      - softlayer--enablement
+  - terms:
+      - solve
+    members:
+      - solve
+  - terms:
+      - spaceship
+    members:
+      - spaceship
+  - terms:
+      - speech
+    members:
+      - speech
+      - speech--alphabet--a--expanded
+      - speech--to--text
+  - terms:
+      - speedometer
+    members:
+      - speedometer
+  - terms:
+      - stairs
+    members:
+      - stairs--plan--view
+  - terms:
+      - stationary
+    members:
+      - stationary--bicycle
+  - terms:
+      - steel
+    members:
+      - steel
+  - terms:
+      - steering
+    members:
+      - steering--wheel
+  - terms:
+      - stethoscope
+    members:
+      - stethoscope
+  - terms:
+      - strategy
+    members:
+      - strategy
+      - strategy--direct
+      - strategy--move
+      - strategy--play
+  - terms:
+      - streamline
+    members:
+      - streamline
+  - terms:
+      - sunny
+    members:
+      - sunny
+      - sunny--hazy
+  - terms:
+      - support
+    members:
+      - support--services
+  - terms:
+      - swipe
+    members:
+      - swipe--left
+      - swipe--right
+  - terms:
+      - tags
+    members:
+      - tags
+  - terms:
+      - target
+    members:
+      - target
+      - target--area
+  - terms:
+      - tel
+    members:
+      - tel--aviv
+  - terms:
+      - telecom
+    members:
+      - telecom
+  - terms:
+      - telephone
+    members:
+      - telephone
+  - terms:
+      - television
+    members:
+      - television
+  - terms:
+      - temperature
+    members:
+      - temperature--high
+      - temperature--low
+  - terms:
+      - tennis
+    members:
+      - tennis
+  - terms:
+      - test
+    members:
+      - test--tubes
+  - terms:
+      - text
+    members:
+      - text--to--speech
+  - terms:
+      - time
+    members:
+      - time
+  - terms:
+      - time
+    members:
+      - time-lapse
+  - terms:
+      - toggle
+    members:
+      - toggle
+  - terms:
+      - tokyo
+    members:
+      - tokyo--cherry--blossom
+      - tokyo--gates
+      - tokyo--temple
+      - tokyo--volcano
+  - terms:
+      - tone
+    members:
+      - tone--analyzer
+  - terms:
+      - tools
+    members:
+      - tools
+  - terms:
+      - tornado
+    members:
+      - tornado
+  - terms:
+      - toronto
+    members:
+      - toronto
+  - terms:
+      - touch
+    members:
+      - touch
+      - touch--gesture
+      - touch--id
+      - touch--screen
+      - touch--swipe
+  - terms:
+      - tractor
+    members:
+      - tractor
+  - terms:
+      - tradeoff
+    members:
+      - tradeoff--analytics
+  - terms:
+      - train
+    members:
+      - train
+  - terms:
+      - transform
+    members:
+      - transform
+  - terms:
+      - trash
+    members:
+      - trash
+  - terms:
+      - university
+    members:
+      - university
+  - terms:
+      - unlock
+    members:
+      - unlock
+      - unlock--alt
+  - terms:
+      - upload
+    members:
+      - upload
+      - upload--alt
+  - terms:
+      - user
+    members:
+      - user--analytics
+      - user--insights
+      - user--search
+  - terms:
+      - vancouver
+    members:
+      - vancouver
+  - terms:
+      - video
+    members:
+      - video
+      - video--alt
+      - video--chat
+      - video--play
+  - terms:
+      - virus
+    members:
+      - virus
+  - terms:
+      - vision
+    members:
+      - vision
+  - terms:
+      - visual
+    members:
+      - visual--insights
+      - visual--recognition
+  - terms:
+      - warning
+    members:
+      - warning
+      - warning--alt
+  - terms:
+      - washer
+    members:
+      - washer
+  - terms:
+      - washington
+    members:
+      - washington--dc--monument
+      - washington--dc
+      - washington--dc--capitol
+  - terms:
+      - watson
+    members:
+      - watson--avatar
+  - terms:
+      - weather
+    members:
+      - weather
+  - terms:
+      - web
+    members:
+      - web--developer
+  - terms:
+      - webcast
+    members:
+      - webcast
+  - terms:
+      - wheat
+    members:
+      - wheat
+  - terms:
+      - wifi
+    members:
+      - wifi
+  - terms:
+      - wind
+    members:
+      - wind--power
+  - terms:
+      - windows
+    members:
+      - windows
+  - terms:
+      - windy
+    members:
+      - windy
+  - terms:
+      - wine
+    members:
+      - wine
+  - terms:
+      - wireless
+    members:
+      - wireless--home
+      - wireless--modem
+  - terms:
+      - wrecking
+    members:
+      - wrecking--ball
+  - terms:
+      - yoga
+    members:
+      - yoga--01
+      - yoga--02
+      - yoga--03
+      - yoga--04

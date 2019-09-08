@@ -1,0 +1,3468 @@
+aliases:
+  - terms:
+      - plus
+      - positive
+      - addition
+      - increase
+    members:
+      - add
+      - add--alt
+      - add--filled
+  - terms:
+      - switcher
+      - drawer
+      - 9 dot
+    members:
+      - app-switcher
+  - terms:
+      - application
+      - drawer
+      - 9 dot
+      - 9 square
+    members:
+      - apps
+  - terms:
+      - direction
+      - point
+    members:
+      - arrow--down
+      - arrow--left
+      - arrow--right
+      - arrow--up
+      - arrow--down-left
+      - arrow--down-right
+      - arrow--up-left
+      - arrow--up-right
+      - arrow--annotation
+  - terms:
+      - direction
+      - point
+    members:
+      - arrows
+      - arrows--vertical
+      - arrows--horizontal
+  - terms:
+      - night
+      - moon
+      - sleep
+      - rest
+      - dark
+    members:
+      - asleep
+      - asleep--filled
+  - terms:
+      - paper clip
+      - attach
+      - file
+      - affix
+      - add
+    members:
+      - attachment
+  - terms:
+      - sun
+      - active
+      - day
+      - bright
+    members:
+      - awake
+  - terms:
+      - up
+      - scroll up
+    members:
+      - back-to-top
+  - terms:
+      - date
+      - schedule
+      - day
+      - time
+      - month
+      - year
+    members:
+      - calendar
+  - terms:
+      - pointer
+      - open
+      - close
+      - expand
+      - collapse
+    members:
+      - caret--down
+      - caret--left
+      - caret--right
+      - caret--sort--down
+      - caret--sort--up
+      - caret--sort
+      - caret--up
+  - terms:
+      - sms
+      - text
+      - bubble
+      - bot
+      - speak
+    members:
+      - chat
+  - terms:
+      - approved
+      - 'yes'
+      - valid
+      - status
+    members:
+      - checkmark
+      - checkmark--filled
+      - checkmark--outline
+  - terms:
+      - open
+      - close
+      - expand
+      - collapse
+    members:
+      - chevron--down
+      - chevron--left
+      - chevron--mini
+      - chevron--right
+      - chevron--sort--down
+      - chevron--sort--up
+      - chevron--sort
+      - chevron--up
+  - terms:
+      - X
+      - dismiss
+      - deny
+      - denied
+      - ex
+    members:
+      - close
+      - close--filled
+      - close--outline
+  - terms:
+      - </>
+      - html
+      - java
+      - css
+      - dev
+      - development
+    members:
+      - code
+  - terms:
+      - duplicate
+      - clipboard
+      - copied
+    members:
+      - copy
+      - copy--file
+  - terms:
+      - trash can
+      - remove
+      - trash
+      - edit
+    members:
+      - delete
+  - terms:
+      - file
+      - doc
+      - paper
+    members:
+      - document
+      - document--add
+      - document--export
+      - document--import
+      - document--subtract
+      - document--tasks
+  - terms:
+      - jump to bottom
+      - down
+      - footer
+    members:
+      - down-to-bottom
+  - terms:
+      - install
+    members:
+      - download
+  - terms:
+      - handle
+      - drag
+    members:
+      - draggable
+  - terms:
+      - modify
+      - pencil
+      - change
+    members:
+      - edit
+      - edit--off
+  - terms:
+      - mail
+      - contact
+      - envelope
+      - post
+      - send
+    members:
+      - email
+  - terms:
+      - state
+      - stop
+      - alert
+      - issue
+    members:
+      - error
+      - error--filled
+      - error--outline
+  - terms:
+      - ship
+      - send
+      - out
+    members:
+      - export
+  - terms:
+      - dim
+      - vanish
+      - remove
+      - dissolve
+      - disappear
+    members:
+      - fade
+  - terms:
+      - heart
+      - save
+      - like
+      - fave
+      - bookmark
+    members:
+      - favorite
+      - favorite--filled
+  - terms:
+      - settings
+      - refine
+      - funnel
+      - adjust
+      - modify
+      - set
+    members:
+      - filter
+      - filter--edit
+  - terms:
+      - file
+      - save
+      - document
+      - organize
+    members:
+      - folder
+      - folder--add
+      - folder--details
+      - folder--off
+      - folder--shared
+  - terms:
+      - chat
+      - talk
+      - discuss
+      - conference
+    members:
+      - forum
+  - terms:
+      - align
+      - boxes
+      - 4 boxes
+      - 2x grid
+      - pattern
+    members:
+      - grid
+  - terms:
+      - support
+      - question
+      - assist
+      - more info
+    members:
+      - help
+      - help--filled
+  - terms:
+      - info
+      - learn
+      - more
+      - tip
+      - help
+    members:
+      - information
+      - information--filled
+  - terms:
+      - open
+      - new window
+      - window
+      - expand
+    members:
+      - launch
+  - terms:
+      - bright
+      - sun
+      - sunny
+      - lightbulb
+      - glow
+      - luminous
+      - lamp
+    members:
+      - light
+      - light--filled
+  - terms:
+      - bullet
+      - agenda
+      - checklist
+      - file
+      - index
+      - inventory
+      - table
+      - tally
+    members:
+      - list
+      - list--bulleted
+      - list--checked
+      - list--dropdown
+      - list--numbered
+  - terms:
+      - lock
+      - seal
+      - hidden
+      - edit
+      - padlock
+    members:
+      - locked
+  - terms:
+      - enlarge
+      - full screen
+      - expand
+      - magnify
+      - stretch
+      - open
+      - minimize
+    members:
+      - maximize
+  - terms:
+      - left nav
+      - drawer
+      - list
+      - nav
+      - navigation
+    members:
+      - menu
+  - terms:
+      - close
+      - small
+      - shrink
+      - maximize
+    members:
+      - minimize
+  - terms:
+      - X
+      - close
+      - error
+      - don't
+    members:
+      - misuse
+      - misuse--outline
+      - misuse--alt
+  - terms:
+      - open
+      - expand
+      - view
+      - browser
+      - window
+    members:
+      - new-tab
+  - terms:
+      - alert
+      - bell
+      - sound
+      - mute
+      - chime
+      - noise
+    members:
+      - notification
+      - notification--off
+      - notification--filled
+      - notification--new
+      - notification--off--filled
+  - terms:
+      - show more
+      - options
+      - extra
+      - hidden
+    members:
+      - overflow-menu--horizontal
+      - overflow-menu--vertical
+  - terms:
+      - stop
+      - play
+      - music
+      - control
+    members:
+      - pause
+      - pause--outline--filled
+      - pause--outline
+      - pause--filled
+  - terms:
+      - start
+      - stop
+      - music
+      - control
+    members:
+      - play
+      - play--filled
+      - play--outline--filled
+      - play--outline
+      - play--filled--alt
+  - terms:
+      - 'on'
+      - 'off'
+      - start
+      - stop
+    members:
+      - power
+  - terms:
+      - restart
+      - return
+      - back
+      - revert
+      - undo
+    members:
+      - redo
+  - terms:
+      - undo
+      - rever
+      - refresh
+    members:
+      - restart
+  - terms:
+      - floppy
+      - floppy disk
+      - progress
+      - safe
+      - memory
+      - intact
+      - preserve
+    members:
+      - save
+      - save--annotation
+      - save--image
+      - save--series
+  - terms:
+      - find
+      - investigate
+      - explore
+      - look
+    members:
+      - search
+  - terms:
+      - preferences
+      - options
+      - alternatives
+      - gear
+    members:
+      - settings
+      - settings--adjust
+  - terms:
+      - favorite
+      - progress
+      - rate
+      - rating
+      - saved
+      - starred
+    members:
+      - star
+      - star--filled
+      - star--half
+  - terms:
+      - block
+      - break
+      - close
+      - cease
+      - control
+      - pause
+      - conclude
+    members:
+      - stop
+      - stop--filled
+      - stop--outline--filled
+      - stop--outline
+      - stop--filled--alt
+  - terms:
+      - minus
+      - remove
+      - deduct
+      - withold
+      - decrease
+      - diminish
+      - discount
+      - remove
+      - take
+      - delete
+    members:
+      - subtract
+      - subtract--alt
+  - terms:
+      - switcher
+    members:
+      - switcher
+  - terms:
+      - trash
+      - waste
+      - delete
+      - litter
+      - bin
+      - wastebin
+      - destroy
+      - remove
+    members:
+      - trash-can
+  - terms:
+      - go back
+      - revert
+      - back
+    members:
+      - undo
+  - terms:
+      - open
+      - lock
+      - opened
+    members:
+      - unlocked
+  - terms:
+      - top
+      - top of page
+      - page up
+      - up chevron
+      - up
+    members:
+      - up-to-top
+  - terms:
+      - transfer
+      - connect
+      - exchange
+      - send
+      - sync
+      - transmit
+      - load
+    members:
+      - upload
+  - terms:
+      - person
+      - avatar
+      - man
+      - woman
+      - figure
+      - profile
+      - account
+      - my account
+    members:
+      - user
+      - user--avatar
+      - user--activity
+      - user--admin
+      - user--avatar--filled--alt
+      - user--avatar--filled
+      - user--data
+      - user--favorite--alt--filled
+      - user--favorite--alt
+      - user--favorite
+      - user--filled
+      - user--follow
+      - user--identification
+      - user--online
+      - user--profile
+      - user--role
+      - user--x-ray
+  - terms:
+      - eye
+      - eyeball
+      - examine
+      - look
+      - inspect
+      - visible
+    members:
+      - view
+      - view--off
+      - view--filled
+      - view--mode-1
+      - view--mode-2
+      - view--off--filled
+  - terms:
+      - halt
+      - stop
+      - caution
+      - danger
+      - warn
+      - alert
+      - notification
+    members:
+      - warning
+      - warning--alt--filled
+      - warning--alt
+      - warning--filled
+      - warning--alt-inverted--filled
+      - warning--alt-inverted
+  - terms:
+      - expand
+      - inspect
+      - size
+      - enlarge
+      - detail
+    members:
+      - zoom--in
+      - zoom--out
+  - terms:
+      - clock
+      - hour
+      - minute
+      - watch
+    members:
+      - time
+  - terms:
+      - four k
+      - resolution
+      - pixels
+      - HD
+      - high definition
+    members:
+      - 4K
+      - 4K--filled
+  - terms:
+      - Application Programming Interface
+      - tool
+      - application
+      - programming
+      - interface
+      - file
+      - file type
+    members:
+      - API--1
+  - terms:
+      - computer aided design
+      - canada
+      - canadian dollar
+      - dollar
+      - money
+      - design
+      - print
+      - file
+      - file type
+    members:
+      - CAD
+  - terms:
+      - file
+      - file type
+      - comma
+      - separated
+      - variable
+      - spreadsheet
+      - data
+    members:
+      - CSV
+  - terms:
+      - record
+      - digital
+      - video
+      - recorder
+      - cable
+      - TV
+    members:
+      - DVR
+  - terms:
+      - file
+      - file type
+      - move
+    members:
+      - GIF
+  - terms:
+      - high
+      - def
+      - definition
+      - high quality
+      - 4K
+    members:
+      - HD
+      - HD--filled
+  - terms:
+      - high
+      - dynamic
+      - range
+      - color
+      - HD
+    members:
+      - HDR
+  - terms:
+      - internet
+      - web
+      - cert
+      - certificate
+      - website
+      - site
+      - URL
+    members:
+      - HTTP
+  - terms:
+      - photo
+      - sensitivity
+      - light
+      - camera
+    members:
+      - ISO
+      - ISO--filled
+      - ISO--outline
+  - terms:
+      - file
+      - type
+      - format
+      - pic
+      - picture
+      - photo
+      - image
+      - compress
+    members:
+      - JPG
+  - terms:
+      - javascript
+      - object
+      - notation
+      - file
+      - type
+      - format
+      - data
+    members:
+      - JSON
+  - terms:
+      - movie
+      - video
+      - file
+      - type
+      - film
+      - format
+    members:
+      - MOV
+  - terms:
+      - music
+      - audio
+      - song
+      - compress
+      - file
+      - type
+    members:
+      - MP3
+  - terms:
+      - movie
+      - video
+      - file
+      - type
+      - film
+      - format
+    members:
+      - MP4
+  - terms:
+      - document
+      - doc
+      - compress
+      - portable
+      - document
+      - format
+    members:
+      - PDF
+  - terms:
+      - file
+      - type
+      - format
+      - pic
+      - picture
+      - photo
+      - image
+      - compress
+    members:
+      - PNG
+  - terms:
+      - letter
+      - alphabet
+    members:
+      - H
+  - terms:
+      - standard
+      - letter
+      - alphabet
+      - alt
+    members:
+      - S
+      - S--alt
+  - terms:
+      - letter
+      - alphabet
+      - alt
+    members:
+      - T
+      - T--alt
+  - terms:
+      - Q
+    members:
+      - U1
+  - terms:
+      - Q
+    members:
+      - U2
+  - terms:
+      - Q
+    members:
+      - U3
+  - terms:
+      - alphabet
+      - letter
+      - cross
+    members:
+      - X
+  - terms:
+      - alphabet
+      - letter
+    members:
+      - 'Y'
+  - terms:
+      - alphabet
+      - letter
+    members:
+      - Z
+  - terms:
+      - wall
+      - fence
+      - block
+      - stop
+      - divide
+    members:
+      - barrier
+  - terms:
+      - Q
+      - bloch
+      - sphere
+    members:
+      - bloch-sphere
+  - terms:
+      - Q
+      - c
+      - u
+      - one
+    members:
+      - cU1
+  - terms:
+      - q
+      - c
+      - u
+      - three
+    members:
+      - cU3
+  - terms:
+      - Q
+      - c
+      - 'y'
+    members:
+      - cY
+  - terms:
+      - Q
+      - c
+      - z
+    members:
+      - cZ
+  - terms:
+      - Q
+      - cc
+      - c
+      - X
+    members:
+      - ccX
+  - terms:
+      - Q
+      - H
+      - circuit
+      - composer
+    members:
+      - circuit-composer
+  - terms:
+      - Q
+      - circuit
+      - composer
+      - edit
+    members:
+      - composer-edit
+  - terms:
+      - Q
+      - hinton
+      - plot
+      - grid
+    members:
+      - hinton-plot
+  - terms:
+      - identification
+      - identity
+    members:
+      - iD
+  - terms:
+      - cast
+      - grid
+      - model
+      - binary
+    members:
+      - matrix
+  - terms:
+      - meter
+      - gauge
+      - indicator
+      - bracket
+    members:
+      - operation
+      - operation--gauge
+      - operation--if
+  - terms:
+      - format
+      - unedited
+    members:
+      - RAW
+  - terms:
+      - SDK
+    members:
+      - SDK
+  - terms:
+      - database
+      - query
+    members:
+      - SQL
+  - terms:
+      - format
+      - image
+      - vector
+    members:
+      - SVG
+  - terms:
+      - format
+      - image
+    members:
+      - TIF
+  - terms:
+      - format
+      - data
+      - database
+      - spreadsheet
+    members:
+      - TSV
+  - terms:
+      - text
+      - format
+      - string
+    members:
+      - TXT
+  - terms:
+      - connector
+      - protocol
+      - connection
+      - bus
+      - port
+    members:
+      - USB
+  - terms:
+      - protocol
+      - virtual
+      - network
+      - connection
+      - secure
+      - internet
+    members:
+      - VPN
+  - terms:
+      - format
+      - music
+      - video
+      - codec
+    members:
+      - WMV
+  - terms:
+      - excel
+      - format
+      - spreadsheet
+    members:
+      - XLS
+  - terms:
+      - format
+      - markup
+      - language
+      - HTML
+    members:
+      - XML
+  - terms:
+      - compress
+      - format
+    members:
+      - ZIP
+  - terms:
+      - wheelchair
+      - convenience
+      - accessible
+    members:
+      - accessibility
+  - terms:
+      - account
+    members:
+      - account
+  - terms:
+      - line chart
+      - vital
+      - action
+      - heartbeat
+    members:
+      - activity
+  - terms:
+      - add
+      - comment
+      - chat
+      - bubble
+    members:
+      - add-comment
+  - terms:
+      - clock
+      - timer
+      - time
+      - alert
+    members:
+      - alarm
+      - alarm--add
+      - alarm--subtract
+  - terms:
+      - line chart
+      - trend
+      - graph
+      - analyze
+      - data
+    members:
+      - analytics
+  - terms:
+      - eye
+      - camera
+      - pinhole
+      - pinwheel
+    members:
+      - aperture
+  - terms:
+      - program
+      - tool
+      - application
+      - format
+      - interface
+      - protocol
+      - connect
+      - group
+      - network
+    members:
+      - api
+  - terms:
+      - box
+      - app
+      - interface
+    members:
+      - application
+  - terms:
+      - drawer
+      - server
+      - stack
+      - tower
+      - file cabinet
+    members:
+      - archive
+  - terms:
+      - plane
+      - landing
+      - descend
+    members:
+      - arrival
+  - terms:
+      - runtime
+      - wheel
+      - tape
+      - roll
+    members:
+      - asset
+  - terms:
+      - at
+      - \@
+    members:
+      - at
+  - terms:
+      - audio-console
+    members:
+      - audio-console
+  - terms:
+      - augmented-reality
+    members:
+      - augmented-reality
+  - terms:
+      - drink
+      - alcohol
+      - cocktail
+      - wine
+    members:
+      - bar
+  - terms:
+      - charging
+      - power
+    members:
+      - battery--charging
+      - battery--empty
+      - battery--full
+      - battery--half
+      - battery--low
+      - battery--quarter
+  - terms:
+      - ibm
+      - fly
+      - honey
+      - bumblebee
+      - drone
+      - insect
+    members:
+      - bee
+  - terms:
+      - bike
+      - cycle
+      - wheels
+      - transport
+      - transportation
+    members:
+      - bicycle
+  - terms:
+      - search
+      - vision
+      - field
+      - glasses
+      - zoom
+    members:
+      - binoculars
+  - terms:
+      - writing
+      - journal
+      - site
+      - layout
+      - page
+    members:
+      - blog
+  - terms:
+      - wireless
+      - connect
+      - blue
+      - tooth
+    members:
+      - bluetooth
+      - bluetooth--off
+  - terms:
+      - flag
+      - marker
+    members:
+      - bookmark
+  - terms:
+      - file
+      - archive
+      - office
+    members:
+      - box
+  - terms:
+      - branch
+    members:
+      - branch
+  - terms:
+      - sun
+      - bright
+      - light
+      - dark
+      - contrast
+      - opposite
+    members:
+      - brightness-contrast
+  - terms:
+      - factory
+      - architecture
+      - office
+    members:
+      - building
+      - building--insights-1
+      - building--insights-2
+      - building--insights-3
+  - terms:
+      - announcement
+      - announce
+      - broadcast
+      - news
+      - release
+      - notify
+      - decare
+      - blast
+      - speaker
+    members:
+      - bullhorn
+  - terms:
+      - transport
+      - transportation
+      - travel
+      - public
+    members:
+      - bus
+  - terms:
+      - coffee
+      - caffine
+      - drink
+      - espresso
+      - brew
+      - mocha
+    members:
+      - cafe
+  - terms:
+      - calculate
+      - PDA
+      - computer
+    members:
+      - calculator
+      - calculator--check
+  - terms:
+      - caliper
+      - measure
+      - measurement
+      - adjust
+      - gauge
+    members:
+      - calibrate
+  - terms:
+      - photo
+      - photography
+      - image
+      - record
+      - picture
+      - snapshot
+    members:
+      - camera
+      - camera--action
+  - terms:
+      - transport
+      - private
+      - automobile
+      - jeep
+      - ride
+      - pickup
+    members:
+      - car
+  - terms:
+      - carbon
+    members:
+      - carbon
+  - terms:
+      - roundabout
+      - ride
+      - image
+      - gallery
+      - sequence
+    members:
+      - carousel--horizontal
+      - carousel--vertical
+  - terms:
+      - notebook
+      - book
+      - list
+      - schedule
+    members:
+      - catalog
+  - terms:
+      - group
+      - section
+      - class
+      - department
+    members:
+      - categories
+  - terms:
+      - category
+    members:
+      - category
+      - category--add
+      - category--and
+      - category--new-each
+      - category--new
+  - terms:
+      - graph
+      - bar
+      - data
+    members:
+      - chart--bar
+      - chart--bubble
+      - chart--line--data
+      - chart--line
+      - chart--network
+      - chart--pie
+      - chart--scatter
+      - chart--venn-diagram
+  - terms:
+      - check
+      - box
+    members:
+      - checkbox
+      - checkbox--checked--filled
+      - checkbox--checked
+      - checkbox--undeterminate--filled
+      - checkbox--undeterminate
+  - terms:
+      - science
+      - flask
+      - glass
+    members:
+      - chemistry
+  - terms:
+      - microchip
+      - computer chip
+    members:
+      - chip
+  - terms:
+      - circle
+      - dash
+      - dashed line
+    members:
+      - circle-dash
+  - terms:
+      - measure word
+      - counter word
+    members:
+      - classifier--language
+  - terms:
+      - caption
+      - closed
+      - cc
+    members:
+      - closed-caption
+      - closed-caption--alt
+      - closed-caption--filled
+  - terms:
+      - donwload
+      - compute
+      - data
+      - hybrid
+    members:
+      - cloud
+      - cloud--download
+      - cloud--lightning
+      - cloud--rain
+      - cloud--snow
+      - cloud--upload
+  - terms:
+      - cloud-app
+    members:
+      - cloud-app
+  - terms:
+      - platform
+      - multi cloud
+      - cloud
+      - foundry
+    members:
+      - cloud-foundry--1
+      - cloud-foundry--2
+  - terms:
+      - brain
+      - idea
+      - think
+      - mind
+    members:
+      - cognitive
+  - terms:
+      - people
+      - cooperate
+      - relation
+      - coworker
+      - rotate
+      - shift
+    members:
+      - collaborate
+  - terms:
+      - paint palette
+      - paint
+      - palette
+    members:
+      - color-palette
+  - terms:
+      - grid
+      - lines
+      - structure
+    members:
+      - column
+  - terms:
+      - arrows
+      - exchange
+      - merge
+      - match
+      - files
+      - documents
+    members:
+      - compare
+  - terms:
+      - direction
+      - navigation
+      - explore
+      - navigate
+      - destination
+      - guide
+    members:
+      - compass
+  - terms:
+      - concept
+    members:
+      - concept
+  - terms:
+      - network
+      - link
+      - join
+      - attach
+      - associate
+    members:
+      - connect
+  - terms:
+      - signal
+      - tower
+      - service
+      - station
+      - radio
+      - connection
+      - wireless
+      - network
+    members:
+      - connection-signal
+  - terms:
+      - brightness
+      - darkness
+      - sun
+      - light
+      - dark
+      - comparison
+    members:
+      - contrast
+  - terms:
+      - frame
+      - flourish
+      - squares
+      - connection
+      - edge
+      - intersection
+      - decoration
+    members:
+      - corner
+  - terms:
+      - cut
+      - trim
+      - picture
+      - tool
+      - cropping
+      - editing
+      - photo
+    members:
+      - crop
+  - terms:
+      - mouse
+      - arrow
+      - direction
+      - mouse
+      - click
+      - pointer
+    members:
+      - cursor--1
+      - cursor--2
+  - terms:
+      - scissors
+      - cutting
+      - snip
+      - trim
+      - shear
+      - clippers
+    members:
+      - cut
+  - terms:
+      - gauge
+      - ui
+      - control panel
+      - analytics
+      - metrics
+      - interface
+      - overview
+      - wireframe
+    members:
+      - dashboard
+  - terms:
+      - connection
+      - dot
+      - numbers
+      - metrics
+      - characters
+    members:
+      - data--1
+      - data--2
+      - data--base
+      - data--check
+      - data--connected
+      - data--error
+      - data--reference
+      - data--set
+      - data--structured
+      - data--unstructured
+  - terms:
+      - data
+      - share
+      - link
+      - compare
+      - transfer
+      - exchange
+    members:
+      - data-share
+  - terms:
+      - vis
+      - graph
+      - chart
+      - infographic
+      - analytics
+      - metrics
+      - stats
+      - web
+    members:
+      - data-vis--1
+      - data-vis--2
+      - data-vis--3
+      - data-vis--4
+  - terms:
+      - bug
+      - beetle
+      - insect
+      - code bug
+    members:
+      - debug
+  - terms:
+      - truck
+      - car
+      - delivery
+      - transportation
+      - shopping
+      - van
+      - shipping
+      - ecommerce
+    members:
+      - delivery-truck
+  - terms:
+      - plane
+      - airplane
+      - vacation
+      - travel
+      - journey
+      - leave
+    members:
+      - departure
+  - terms:
+      - rules
+      - deploy
+      - document
+      - instruction
+      - deploy
+    members:
+      - deploy-rules
+  - terms:
+      - build
+      - pixels
+      - squares
+      - structure
+      - code
+      - html
+      - code
+      - grid
+    members:
+      - development
+  - terms:
+      - monitor
+      - screen
+      - devices
+      - compatibility
+    members:
+      - devices
+  - terms:
+      - pie chart
+      - pie
+      - chart
+      - infographic
+      - data vis
+    members:
+      - diagram
+  - terms:
+      - expand
+      - drop
+      - move
+      - expand
+      - drop
+      - move
+    members:
+      - drag--horizontal
+      - drag--vertical
+  - terms:
+      - squiggle
+      - drawing
+      - graphic
+      - line
+      - doodle
+    members:
+      - draw
+  - terms:
+      - earth
+    members:
+      - earth
+      - earth--americas--filled
+      - earth--americas
+      - earth--europe-africa--filled
+      - earth--europe-africa
+      - earth--filled
+      - earth--southeast-asia--filled
+      - earth--southeast-asia
+  - terms:
+      - version
+      - iteration
+      - repeat
+      - loop
+      - editing
+      - recycle
+    members:
+      - edt-loop
+  - terms:
+      - graduation
+      - scholarship
+      - student
+      - university
+      - study
+      - school
+      - college
+    members:
+      - education
+  - terms:
+      - enterprise
+    members:
+      - enterprise
+  - terms:
+      - eraser
+      - remove
+      - clear
+      - rubber
+      - change
+      - edit
+      - rubber
+      - format
+    members:
+      - erase
+  - terms:
+      - calendar
+      - star
+      - date
+      - favorite
+      - schedule
+    members:
+      - event
+      - event--schedule
+  - terms:
+      - people
+      - team
+      - group
+      - organization
+      - network
+    members:
+      - events
+      - events--alt
+  - terms:
+      - dev test
+      - testing
+      - test
+      - exam
+    members:
+      - exam-mode
+  - terms:
+      - dropper
+      - pipette
+      - tester
+      - drop
+    members:
+      - eyedropper
+  - terms:
+      - smiley
+      - smile
+      - smiley face
+      - emoji
+      - head
+      - emotion
+    members:
+      - face--activated--add
+      - face--activated--filled
+      - face--activated
+      - face--add
+      - face--cool
+      - face--dissatisfied--filled
+      - face--dissatisfied
+      - face--dizzy--filled
+      - face--dizzy
+      - face--neutral--filled
+      - face--neutral
+      - face--pending--filled
+      - face--pending
+      - face--satisfied--filled
+      - face--satisfied
+      - face--wink--filled
+      - face--wink
+  - terms:
+      - bank
+      - columns
+      - money
+      - business
+      - corporation
+      - business
+    members:
+      - finance
+  - terms:
+      - identification
+      - fingerprint
+      - finger
+      - dna
+      - security
+      - touch
+      - identity
+      - mark
+    members:
+      - fingerprint-recognition
+  - terms:
+      - country
+      - location
+      - nation
+      - banner
+      - notification
+      - marker
+    members:
+      - flag
+  - terms:
+      - battery
+      - lightning
+      - energy
+      - charge
+      - power
+      - camera
+      - electricity
+      - storm
+    members:
+      - flash
+      - flash--filled
+      - flash--off--filled
+      - flash--off
+  - terms:
+      - flow chart
+      - chart
+      - graph
+      - diagram
+      - outline
+    members:
+      - flow
+      - flow--data
+      - flow--stream
+  - terms:
+      - fork
+    members:
+      - fork
+  - terms:
+      - ahead
+      - future
+      - fast forward
+      - skip
+      - next
+      - fast
+    members:
+      - forward--10
+      - forward--30
+      - forward--5
+  - terms:
+      - action
+      - behavior
+      - duty
+      - purpose
+      - role
+      - responsibility
+      - objective
+    members:
+      - function
+  - terms:
+      - play
+      - match
+      - activity
+      - ballgame
+      - energy
+      - spirit
+    members:
+      - game--console
+      - game--wireless
+  - terms:
+      - planet
+      - earth
+      - world
+      - map
+      - orb
+    members:
+      - globe
+  - terms:
+      - category
+      - band
+      - bucket
+      - club
+      - association
+      - bunch
+      - organization
+      - cluster
+    members:
+      - group
+  - terms:
+      - headset
+      - listening device
+      - listening
+      - ear buds
+      - hearing
+      - transceiver
+    members:
+      - headphones
+  - terms:
+      - headphones
+      - listening device
+      - listening
+      - ear buds
+      - hearing
+      - console
+      - transceiver
+    members:
+      - headset
+  - terms:
+      - red cross
+      - medicine
+      - healthcare
+      - medical
+      - ambulance
+    members:
+      - health-cross
+  - terms:
+      - detecting
+      - ear
+      - headphones
+      - headset
+      - listen
+      - auditory
+      - perception
+      - senses
+    members:
+      - hearing
+  - terms:
+      - help-desk
+    members:
+      - help-desk
+  - terms:
+      - detecting
+      - ear
+      - headphones
+      - headset
+      - listen
+      - auditory
+      - perception
+      - senses
+    members:
+      - home
+  - terms:
+      - hostel
+      - motel
+      - house
+      - inn
+      - lodging
+      - resort
+    members:
+      - hotel
+  - terms:
+      - clock
+      - metronome
+      - timepiece
+      - timer
+      - time
+      - duration
+    members:
+      - hourglass
+  - terms:
+      - weather
+      - damp
+      - dampness
+      - moisture
+      - dew
+      - muggy
+      - mugginess
+      - steaminess
+      - steam
+    members:
+      - humidity
+  - terms:
+      - hurricane
+    members:
+      - hurricane
+  - terms:
+      - product
+      - cloud
+      - hybrid
+      - service
+      - offerring
+      - online
+      - internet
+      - brand
+    members:
+      - ibm-cloud
+  - terms:
+      - safe
+      - cyber security
+      - hacking
+      - data security
+      - offerring
+      - product
+      - protection
+      - cyber crime
+      - cyber
+      - secure
+    members:
+      - ibm-security
+  - terms:
+      - thought
+      - notion
+      - belief
+      - concept
+      - light bulb
+      - inspiration
+      - opinion
+      - intention
+      - design
+    members:
+      - idea
+  - terms:
+      - id
+      - passport
+      - drivers license
+      - recognition
+      - badge
+      - papers
+      - avatar
+    members:
+      - identification
+  - terms:
+      - appearance
+      - form
+      - drawing
+      - illustration
+      - picture
+      - portrait
+      - likeness
+      - avatar
+    members:
+      - image
+      - image--medical
+  - terms:
+      - field
+      - business
+      - commerce
+      - corporation
+      - trade
+      - line of work
+      - job
+      - career
+    members:
+      - industry
+  - terms:
+      - embed
+      - enter
+      - fill in
+      - paste
+      - inject
+      - include
+      - infuse
+    members:
+      - insert
+  - terms:
+      - assimilate
+      - assimilation
+      - amalgamation
+      - synthesis
+      - combination
+      - combine
+      - union
+    members:
+      - integration
+  - terms:
+      - supervision
+      - asset management
+      - inventory
+      - dashboard
+      - supply chain
+      - analytics
+      - administration
+      - oversight
+    members:
+      - inventory-management
+  - terms:
+      - internet of things
+      - smart objects
+      - connectivity
+      - connected
+      - network
+      - communication
+      - wireless
+      - sensors
+      - analytics
+      - machine learning
+      - smart devices
+      - connect
+      - platform
+    members:
+      - iot--connect
+      - iot--platform
+  - terms:
+      - console
+      - typing
+      - type
+      - key commands
+      - computer
+      - word processor
+      - write
+    members:
+      - keyboard
+  - terms:
+      - language
+    members:
+      - language
+  - terms:
+      - laptop
+    members:
+      - laptop
+  - terms:
+      - alphabet
+      - language
+      - english
+    members:
+      - letter--Aa
+      - letter--Bb
+      - letter--Cc
+      - letter--Dd
+      - letter--Ee
+      - letter--Ff
+      - letter--Gg
+      - letter--Hh
+      - letter--Ii
+      - letter--Jj
+      - letter--Kk
+      - letter--Ll
+      - letter--Mm
+      - letter--Nn
+      - letter--Oo
+      - letter--Pp
+      - letter--Qq
+      - letter--Rr
+      - letter--Ss
+      - letter--Tt
+      - letter--Uu
+      - letter--Vv
+      - letter--Ww
+      - letter--Xx
+      - letter--Yy
+      - letter--Zz
+  - terms:
+      - associate
+      - association
+      - network
+      - connect
+      - join
+      - hookup
+    members:
+      - link
+  - terms:
+      - place
+      - locate
+      - gps
+      - destination
+      - map
+      - pin
+      - site
+      - area
+    members:
+      - location
+  - terms:
+      - log on
+      - password
+      - enter
+      - sign in
+      - sign on
+      - pin
+      - username
+    members:
+      - login
+  - terms:
+      - brand
+      - emblem
+      - logotype
+      - symbol
+      - id
+      - avatar
+      - tag
+      - identification
+    members:
+      - logo--delicious
+      - logo--digg
+      - logo--facebook
+      - logo--flickr
+      - logo--github
+      - logo--glassdoor
+      - logo--google
+      - logo--linkedin
+      - logo--livestream
+      - logo--pinterest
+      - logo--quora
+      - logo--skype
+      - logo--slack
+      - logo--snapchat
+      - logo--stumbleupon
+      - logo--tumblr
+      - logo--twitter
+      - logo--xing
+      - logo--youtube
+  - terms:
+      - sign off
+      - sign out
+      - log off
+      - quit
+      - exit
+    members:
+      - logout
+  - terms:
+      - knot
+      - curl
+      - circuit
+      - bend
+      - coil
+      - curve
+      - around
+      - twirl
+    members:
+      - loop
+  - terms:
+      - command
+      - key command
+      - command key
+      - macintosh
+      - apple
+      - keyboard
+    members:
+      - mac--command
+      - mac--option
+      - mac--shift
+  - terms:
+      - email
+      - send
+      - letter
+      - reply
+      - envelope
+      - letter
+    members:
+      - mail--all
+  - terms:
+      - atlas
+      - locate
+      - gps
+      - location
+      - graph
+      - directions
+      - diagram
+      - plan
+    members:
+      - map
+  - terms:
+      - medicine
+      - drug
+      - treatment
+      - remedy
+      - medicate
+      - assistance
+      - placebo
+      - pill
+      - antidote
+    members:
+      - medication
+      - medication--alert
+      - medication--reminder
+  - terms:
+      - mic
+      - speaker
+      - wire
+      - speaker
+      - MC
+      - presenter
+      - present
+    members:
+      - microphone
+      - microphone--filled
+      - microphone--off--filled
+      - microphone--off
+  - terms:
+      - drift
+      - roam
+      - shift
+      - emigrate
+      - immigrate
+      - journey
+      - transfer
+      - move
+    members:
+      - migrate
+      - migrate--alt
+  - terms:
+      - phone
+      - iphone
+      - responsive
+      - view port
+      - telephone
+      - roaming
+      - ux
+      - portable
+    members:
+      - mobile
+      - mobile--add
+      - mobile--check
+      - mobile--download
+      - mobile--landscape
+  - terms:
+      - reference
+      - 3d
+      - prototype
+      - sketch
+      - illustrate
+      - assemble
+      - fabricate
+      - manufacture
+      - construct
+    members:
+      - model
+      - model--reference
+  - terms:
+      - action
+      - transfer
+      - direction
+      - directional
+      - shift
+      - maneuver
+    members:
+      - move
+  - terms:
+      - action
+      - transfer
+      - direction
+      - directional
+      - shift
+      - maneuver
+    members:
+      - movement
+  - terms:
+      - audio
+      - melody
+      - sound
+      - singing
+      - harmony
+      - beat
+      - rhythm
+    members:
+      - music
+  - terms:
+      - network
+    members:
+      - network--1
+      - network--2
+      - network--3
+      - network--4
+  - terms:
+      - no-image
+    members:
+      - no-image
+  - terms:
+      - no-ticket
+    members:
+      - no-ticket
+  - terms:
+      - failed
+      - failure
+      - incomplete
+      - sent
+      - send
+      - email
+    members:
+      - not-sent
+      - not-sent--filled
+  - terms:
+      - book
+      - notes
+      - diary
+      - journal
+      - binder
+      - log
+      - workbook
+    members:
+      - notebook
+      - notebook--reference
+  - terms:
+      - count
+      - numeral
+      - digit
+      - statistic
+      - figure
+    members:
+      - number--0
+      - number--1
+      - number--2
+      - number--3
+      - number--4
+      - number--5
+      - number--6
+      - number--7
+      - number--8
+      - number--9
+      - number--small--0
+      - number--small--1
+      - number--small--2
+      - number--small--3
+      - number--small--4
+      - number--small--5
+      - number--small--6
+      - number--small--7
+      - number--small--8
+      - number--small--9
+  - terms:
+      - transparency
+      - dim
+      - darkness
+      - shade
+      - color
+      - gradient
+    members:
+      - opacity
+  - terms:
+      - open
+      - panel
+      - navigation
+      - side nav
+      - ui
+      - nav
+    members:
+      - open-panel--bottom
+      - open-panel--filled--bottom
+      - open-panel--filled--left
+      - open-panel--filled--right
+      - open-panel--filled--top
+      - open-panel--left
+      - open-panel--right
+      - open-panel--top
+  - terms:
+      - download
+      - kit
+      - packet
+      - assortment
+      - bunch
+      - load
+      - group
+    members:
+      - package
+  - terms:
+      - next
+      - forward
+      - backward
+      - read
+      - back
+    members:
+      - page--first
+      - page--last
+  - terms:
+      - brush
+      - paint
+      - color
+      - art
+      - artwork
+      - image
+      - portrait
+      - palette
+    members:
+      - paint-brush
+  - terms:
+      - side
+      - navigation
+      - UI
+      - open
+    members:
+      - panel-expansion
+  - terms:
+      - nested
+      - relation
+      - tree
+      - org
+    members:
+      - parent-child
+  - terms:
+      - partly-cloudy
+    members:
+      - partly-cloudy
+  - terms:
+      - relationship
+      - handshake
+      - people
+      - business
+    members:
+      - partnership
+  - terms:
+      - key
+      - code
+      - lock
+      - security
+    members:
+      - password
+  - terms:
+      - copy
+      - file
+      - text
+    members:
+      - paste
+  - terms:
+      - human
+      - male
+      - female
+      - figure
+      - user
+    members:
+      - person
+      - person--favorite
+  - terms:
+      - call
+      - cell
+      - connect
+      - chat
+      - sound
+      - mute
+    members:
+      - phone
+      - phone--filled
+      - phone--off--filled
+      - phone--off
+  - terms:
+      - health
+      - medicine
+    members:
+      - pills
+      - pills--add
+      - pills--subtract
+  - terms:
+      - save
+      - favorite
+    members:
+      - pin
+  - terms:
+      - airplane
+      - flight
+      - travel
+    members:
+      - plane
+  - terms:
+      - music
+      - play
+      - dj
+    members:
+      - playlist
+  - terms:
+      - modal
+      - overlay
+      - expand
+    members:
+      - popup
+  - terms:
+      - briefcase
+      - suitcase
+      - travel
+      - case
+    members:
+      - portfolio
+  - terms:
+      - keynote
+      - chart
+      - meeting
+      - graph
+    members:
+      - presentation-file
+  - terms:
+      - print
+      - copy
+      - file
+      - paper
+    members:
+      - printer
+  - terms:
+      - charge
+      - card
+      - credit card
+      - debit
+    members:
+      - purchase
+  - terms:
+      - list
+    members:
+      - query-queue
+  - terms:
+      - mark
+      - punctuation
+    members:
+      - quotes
+  - terms:
+      - component
+      - circle
+      - travel
+      - case
+    members:
+      - radio-button
+      - radio-button--checked
+  - terms:
+      - music
+      - sound
+      - audio
+      - broadcast
+    members:
+      - radio
+  - terms:
+      - check
+      - bill
+      - total
+    members:
+      - receipt
+  - terms:
+      - history
+      - version
+      - back
+      - recent
+    members:
+      - recently-viewed
+  - terms:
+      - suggest
+      - award
+      - favorite
+    members:
+      - recommend
+  - terms:
+      - start
+      - music
+      - sound
+      - control
+    members:
+      - recording
+      - recording--filled--alt
+      - recording--filled
+  - terms:
+      - refresh
+      - replay
+      - restart
+    members:
+      - renew
+  - terms:
+      - repeat once
+      - music
+      - control
+    members:
+      - repeat
+      - repeat--one
+  - terms:
+      - back
+      - respond
+      - email
+    members:
+      - reply
+  - terms:
+      - clipboard
+      - paper
+      - chart
+      - summary
+    members:
+      - report
+      - report--data
+  - terms:
+      - edit
+      - pencil
+      - paper
+      - modify
+    members:
+      - request-quote
+  - terms:
+      - study
+      - sphere
+    members:
+      - research--bloch-sphere
+      - research--hinton-plot
+      - research--matrix
+  - terms:
+      - refresh
+      - undo
+      - revert
+    members:
+      - reset
+      - reset--alt
+  - terms:
+      - dining
+      - knife
+      - fork
+      - utensil
+      - dinner
+      - food
+      - cafe
+      - eat
+    members:
+      - restaurant
+      - restaurant--fine
+  - terms:
+      - back
+      - previous
+      - past
+      - reverse
+    members:
+      - rewind--10
+      - rewind--30
+      - rewind--5
+  - terms:
+      - missile
+      - spaceship
+      - spacecraft
+      - boost
+      - launch
+    members:
+      - rocket
+  - terms:
+      - revolve
+      - circle
+      - circulate
+      - circle arrow
+      - launch
+    members:
+      - rotate
+      - rotate--clockwise--alt--filled
+      - rotate--clockwise--alt
+      - rotate--clockwise--filled
+      - rotate--clockwise
+      - rotate--counterclockwise--alt--filled
+      - rotate--counterclockwise--alt
+      - rotate--counterclockwise--filled
+      - rotate--counterclockwise
+  - terms:
+      - line
+      - tier
+      - queue
+      - column
+      - composition
+      - layout
+      - horizontal
+      - template
+    members:
+      - row
+  - terms:
+      - web feed
+      - feed
+      - news
+      - reading
+      - subscribe
+      - subscription
+    members:
+      - rss
+  - terms:
+      - measure
+      - tool
+      - school
+      - office
+      - length
+      - scale
+    members:
+      - ruler
+      - ruler--alt
+  - terms:
+      - start
+      - play
+      - program
+    members:
+      - run
+  - terms:
+      - scalable
+      - ratio
+      - proportion
+      - scope
+      - spectrum
+      - resize
+      - design
+      - square
+      - tool
+    members:
+      - scale
+  - terms:
+      - blade
+      - cutter
+      - knife
+      - cut
+      - tool
+      - surgery
+      - sharp
+      - health
+      - hospital
+      - medical
+    members:
+      - scalpel
+  - terms:
+      - scanner
+      - code
+      - barcode
+      - detect
+      - examine
+      - check
+      - qr
+    members:
+      - scan
+  - terms:
+      - computer
+      - display
+      - monitor
+      - desktop
+      - device
+      - technology
+      - pc
+      - mac
+    members:
+      - screen
+      - screen--off
+  - terms:
+      - mail
+      - message
+      - paper plane
+      - sending
+      - message
+      - arrow
+      - deliver
+      - letter
+      - email
+    members:
+      - send
+      - send--alt--filled
+      - send--alt
+      - send--filled
+  - terms:
+      - service-desk
+    members:
+      - service-desk
+  - terms:
+      - people
+      - communicate
+      - idea
+      - contribution
+      - brainstorm
+      - thinking
+      - knowledge
+      - exchange
+    members:
+      - share-knowledge
+  - terms:
+      - social media
+      - facebook
+      - twitter
+      - media
+      - social
+      - network
+      - nodes
+      - connect
+    members:
+      - share
+  - terms:
+      - bag
+      - cart
+      - shop
+      - buy
+      - e-commerce
+      - purchase
+      - store
+      - retail
+    members:
+      - shopping--bag
+      - shopping--cart
+      - shopping--catalog
+  - terms:
+      - minimize
+      - resize
+      - arrow
+      - smaller
+      - reduce
+      - shrink
+      - screen
+      - zoom out
+    members:
+      - shrink-screen
+      - shrink-screen--filled
+  - terms:
+      - move
+      - reorder
+      - cross arrows
+      - randomize
+      - random
+      - songs
+      - player
+      - music
+      - multimedia
+    members:
+      - shuffle
+  - terms:
+      - bus
+      - truck
+      - transportation
+      - transit
+      - vehicle
+      - delivery
+      - car
+    members:
+      - shuttle
+  - terms:
+      - arrow
+      - next
+      - forward
+      - button
+      - music
+      - media
+      - multi-media
+      - player
+      - song
+      - music
+    members:
+      - skip--back--filled
+      - skip--back
+      - skip--forward--filled
+      - skip--forward
+  - terms:
+      - nose
+      - scent
+      - odor
+      - fragrance
+      - nostril
+      - senses
+    members:
+      - smell
+  - terms:
+      - check
+      - correction
+      - spelling
+      - type
+      - tool
+      - school
+      - writing
+      - grammar
+      - education
+    members:
+      - spell-check
+  - terms:
+      - divide
+      - dual
+      - split
+      - screen
+      - multitask
+      - view
+      - half
+      - even
+    members:
+      - split-screen
+  - terms:
+      - paint
+      - spray
+      - spray can
+      - aerosol
+      - art
+      - bottle
+      - half
+    members:
+      - spray-paint
+  - terms:
+      - building
+      - shop
+      - house
+      - retail
+      - buisness
+      - online
+      - ecommerce
+      - market
+      - buy
+    members:
+      - store
+  - terms:
+      - sunny
+    members:
+      - sunny
+  - terms:
+      - sunrise
+    members:
+      - sunrise
+  - terms:
+      - sunset
+    members:
+      - sunset
+  - terms:
+      - data
+      - spreadsheet
+      - excel
+      - chart
+      - rows
+      - grid
+    members:
+      - table
+      - table--split
+  - terms:
+      - list
+      - chart
+      - schedule
+      - record
+      - appendix
+      - index
+      - summary
+      - bullet point
+      - content
+      - menu
+    members:
+      - table-of-contents
+  - terms:
+      - tablet
+    members:
+      - tablet
+      - tablet--landscape
+  - terms:
+      - label
+      - mark
+      - price
+      - sale
+      - shop
+      - marker
+    members:
+      - tag
+      - tag--group
+  - terms:
+      - clipboard
+      - checkmark
+      - checklist
+      - assignment
+      - to do list
+      - list
+      - chore
+    members:
+      - task
+  - terms:
+      - tongue
+      - mouth
+      - eat
+      - senses
+    members:
+      - taste
+  - terms:
+      - car
+      - cab
+      - transportation
+      - transit
+      - vehicle
+    members:
+      - taxi
+  - terms:
+      - weather
+      - thermometer
+      - degree
+      - heat
+      - hot
+      - cold
+    members:
+      - temperature
+  - terms:
+      - dashboard
+      - arrange
+      - layout
+      - wireframe
+      - pattern
+    members:
+      - template
+  - terms:
+      - term
+    members:
+      - term
+  - terms:
+      - code
+      - code editor
+      - command line
+    members:
+      - terminal
+  - terms:
+      - letter
+      - typography
+      - alphabet
+      - editor
+    members:
+      - text--align--center
+      - text--align--left
+      - text--align--right
+      - text--all-caps
+      - text--bold
+      - text--color
+      - text--creation
+      - text--fill
+      - text--highlight
+      - text--indent--less
+      - text--indent--more
+      - text--indent
+      - text--italic
+      - text--kerning
+      - text--leading
+      - text--line-spacing
+      - text--scale
+      - text--selection
+      - text--small-caps
+      - text--strikethrough
+      - text--subscript
+      - text--superscript
+      - text--tracking
+      - text--underline
+      - text--wrap
+  - terms:
+      - text-link
+    members:
+      - text-link
+      - text-link--analysis
+  - terms:
+      - text-mining
+    members:
+      - text-mining
+      - text-mining--applier
+  - terms:
+      - preview
+      - carousel
+      - grid
+    members:
+      - thumbnail--1
+      - thumbnail--2
+  - terms:
+      - dislike
+      - hand
+      - down vote
+      - 'no'
+      - disagree
+    members:
+      - thumbs-down
+  - terms:
+      - like
+      - hand
+      - up vote
+      - 'yes'
+      - agree
+    members:
+      - thumbs-up
+  - terms:
+      - stub
+      - admission
+    members:
+      - ticket
+  - terms:
+      - alarm
+      - alert
+      - stop watch
+    members:
+      - timer
+  - terms:
+      - kit
+      - container
+    members:
+      - tool-box
+  - terms:
+      - wrench
+      - fix
+      - setting
+      - customize
+    members:
+      - tools
+  - terms:
+      - hand
+      - tap
+      - press
+      - click
+    members:
+      - touch--1
+      - touch--2
+  - terms:
+      - subway
+      - metro
+      - underground
+    members:
+      - train
+  - terms:
+      - language
+    members:
+      - translate
+  - terms:
+      - flow chart
+    members:
+      - tree-view
+      - tree-view--alt
+  - terms:
+      - type-pattern
+    members:
+      - type-pattern
+  - terms:
+      - types
+    members:
+      - types
+  - terms:
+      - undefined
+    members:
+      - undefined
+      - undefined--filled
+  - terms:
+      - unknown
+    members:
+      - unknown
+      - unknown--filled
+  - terms:
+      - detach
+      - paperclip
+      - break
+    members:
+      - unlink
+  - terms:
+      - person
+      - account
+    members:
+      - user-profile--alt
+  - terms:
+      - vehicle
+      - car
+      - delivery
+    members:
+      - van
+  - terms:
+      - camera
+      - recorder
+      - movie
+    members:
+      - video
+      - video--add
+      - video--chat
+      - video--filled
+      - video--off--filled
+      - video--off
+  - terms:
+      - picture
+      - ai
+    members:
+      - visual-recognition
+  - terms:
+      - recording
+      - audio
+      - tape
+    members:
+      - voicemail
+  - terms:
+      - sound
+      - noise
+    members:
+      - volume--down--filled
+      - volume--down
+      - volume--mute--filled
+      - volume--mute
+      - volume--up--filled
+      - volume--up
+  - terms:
+      - money
+      - purse
+    members:
+      - wallet
+  - terms:
+      - warning-square
+    members:
+      - warning-square
+      - warning-square--filled
+  - terms:
+      - time
+      - clock
+    members:
+      - watch
+  - terms:
+      - ai
+    members:
+      - watson
+      - watson--machine-learning
+  - terms:
+      - watson
+    members:
+      - 3D-Cursor
+  - terms:
+      - watson
+    members:
+      - 3D-MPR-Toggle
+  - terms:
+      - watson
+      - curve
+      - spline
+    members:
+      - 3D-curve--auto-colon
+      - 3D-curve--auto-vessels
+      - 3D-curve--manual
+  - terms:
+      - 3D-software
+    members:
+      - 3D-software
+  - terms:
+      - watson
+      - dots
+      - connection
+      - lattice
+      - group
+    members:
+      - 3rd-party-connected
+  - terms:
+      - watson
+      - tilt
+      - meter
+      - gauge
+    members:
+      - angle
+  - terms:
+      - meter
+      - instrument
+      - annotate
+      - diagram
+      - comment
+    members:
+      - annotation-visibility
+  - terms:
+      - scrolling
+      - slide
+      - control
+    members:
+      - auto-scroll
+  - terms:
+      - target
+      - mark
+      - spot
+      - bull's eye
+    members:
+      - cd--archive
+      - cd--create-archive
+      - cd--create-exchange
+  - terms:
+      - pan
+      - scan
+      - track
+    members:
+      - circle-measurement
+  - terms:
+      - corner
+      - slant
+      - twist
+      - bend
+      - crook
+      - stack
+    members:
+      - cobb-angle
+  - terms:
+      - read
+      - research
+      - refer
+    members:
+      - cross-reference
+  - terms:
+      - denominate
+    members:
+      - denominate
+  - terms:
+      - digital
+      - imaging
+      - communication
+    members:
+      - dicom--6000
+      - dicom--overlay
+  - terms:
+      - pencil
+      - funnel
+    members:
+      - edit-filter
+  - terms:
+      - bar
+      - box
+      - plot
+    members:
+      - fusion-blender
+  - terms:
+      - hanger
+      - clothes
+      - suspended
+      - swing
+    members:
+      - hanging-protocol
+  - terms:
+      - iCA
+      - dimension
+      - cube
+      - space
+    members:
+      - 3D-iCa
+  - terms:
+      - push
+      - pull
+      - server
+      - drive
+    members:
+      - launch-study--1
+      - launch-study--2
+      - launch-study--3
+  - terms:
+      - expand
+      - zoom
+      - amplify
+      - enhance
+    members:
+      - magnify
+  - terms:
+      - mammogram
+    members:
+      - mammogram
+  - terms:
+      - nominate
+    members:
+      - nominate
+  - terms:
+      - pages
+      - stack
+      - flip
+      - browse
+      - shuffle
+      - sheets
+    members:
+      - page-scroll
+  - terms:
+      - cursor
+      - brightness
+      - contrast
+    members:
+      - pet-image--B
+      - pet-image--O
+  - terms:
+      - cursor
+      - text
+      - arrow
+    members:
+      - pointer-text
+  - terms:
+      - circle
+      - hash
+      - select
+      - area
+    members:
+      - region-analysis--area
+      - region-analysis--volume
+  - terms:
+      - registration
+    members:
+      - registration
+  - terms:
+      - backbone
+      - stack
+      - pointer
+      - gap
+      - annotate
+    members:
+      - spine-label
+  - terms:
+      - stack
+      - pages
+      - sheet
+      - migrate
+      - drag
+    members:
+      - stacked-move
+  - terms:
+      - stack
+      - pages
+      - sheet
+      - browse
+      - thick
+      - tall
+    members:
+      - stacked-scrolling--1
+      - stacked-scrolling--2
+  - terms:
+      - air
+      - gas
+      - blow
+      - flow
+      - breathalyzer
+    members:
+      - stress-breath-editor
+  - terms:
+      - patient
+      - user
+      - profile
+    members:
+      - study--next
+      - study--previous
+      - study--skip
+  - terms:
+      - brightness
+      - contrast
+      - sun
+    members:
+      - window--auto
+      - window--base
+      - window--overlay
+  - terms:
+      - track
+      - move
+      - view
+      - zoom
+      - magnifying glass
+      - search
+    members:
+      - zoom-pan
+  - terms:
+      - globe
+      - wikipedia
+      - earth
+      - world
+      - international
+    members:
+      - wikis
+  - terms:
+      - shopping bag
+      - buy
+      - tote
+      - WiFi
+    members:
+      - wireless-checkout
+  - terms:
+      - tiles
+      - dashboard
+      - apps
+    members:
+      - workspace
+  - terms:
+      - horizontal
+      - data
+      - right
+      - angle
+      - corner
+      - turn
+    members:
+      - x-axis
+  - terms:
+      - verticle
+      - data
+      - up
+      - angle
+      - corner
+      - turn
+    members:
+      - y-axis
+  - terms:
+      - depth
+      - 3D
+      - dimension
+      - '3'
+    members:
+      - z-axis
+

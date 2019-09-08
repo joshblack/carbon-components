@@ -7,19 +7,15 @@
 
 'use strict';
 
-const { check } = require('@carbon/icon-build-helpers');
+const { Metadata } = require('@carbon/icon-build-helpers');
 const path = require('path');
 
-check(
-  {
-    categoriesPath: path.resolve(__dirname, '../categories.yml'),
-    metadataPath: path.resolve(__dirname, '../metadata.yml'),
-    iconsPath: path.resolve(__dirname, '../svg'),
-  },
-  {
-    shouldCheckSizes: false,
-  }
-).catch(error => {
+const PACKAGE_DIR = path.resolve(__dirname, '..');
+
+Metadata.check(Metadata.adapters.yml, PACKAGE_DIR, [
+  Metadata.decorators.categories,
+  Metadata.decorators.aliases,
+]).catch(error => {
   console.error(error);
   process.exit(1);
 });
