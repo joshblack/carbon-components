@@ -14,7 +14,7 @@ const path = require('path');
  * @param {Adapter} adapter
  * @param {string} directory
  * @param {Array<Decorator>} decoratorsToLoad
- * @return {object}
+ * @returns {object}
  */
 async function load(adapter, directory, decoratorsToLoad = []) {
   const metadataFilePath = path.join(

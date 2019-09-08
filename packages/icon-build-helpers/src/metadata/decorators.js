@@ -200,8 +200,8 @@ const deprecated = {
       )
       .required(),
   }),
-  decorate(index, data) {},
-  validate(index, data) {},
+  decorate() {},
+  validate() {},
 };
 
 module.exports = {

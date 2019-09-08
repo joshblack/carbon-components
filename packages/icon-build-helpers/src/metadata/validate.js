@@ -8,7 +8,6 @@
 'use strict';
 
 const Joi = require('joi');
-const { load } = require('./storage');
 
 /**
  * Validate a given metadata structure and array of decorators with data. We use

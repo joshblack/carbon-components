@@ -47,7 +47,7 @@ const yml = {
 
   /**
    * Deserialize the given YML data to JavaScript
-   * @param {Object} data
+   * @param {object} data
    * @returns {string}
    */
   deserialize(data) {
