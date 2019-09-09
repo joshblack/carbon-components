@@ -17,21 +17,26 @@ const path = require('path');
  * @returns {object}
  */
 async function load(adapter, directory, decoratorsToLoad = []) {
-  const metadataFilePath = path.join(
-    directory,
-    adapter.getFilenameFor('metadata')
-  );
-  if (!(await fs.pathExists(metadataFilePath))) {
+  const iconsFilePath = path.join(directory, adapter.getFilenameFor('icons'));
+  if (!(await fs.pathExists(iconsFilePath))) {
     throw new Error(
-      `Unable to find metadata file at path: \`${metadataFilePath}\``
+      `Unable to find metadata file at path: \`${iconsFilePath}\``
     );
   }
 
   const metadata = await adapter.deserialize(
-    await fs.readFile(metadataFilePath, 'utf8')
+    await fs.readFile(iconsFilePath, 'utf8')
   );
   const decorators = await Promise.all(
     decoratorsToLoad.map(async decorator => {
+      // If generated, the decorator has no file that has been persisted to disk
+      // so we don't have to load it.
+      if (decorator.generated) {
+        return {
+          decorator,
+        };
+      }
+
       const filepath = path.join(
         directory,
         adapter.getFilenameFor(decorator.name)
@@ -64,13 +69,10 @@ async function load(adapter, directory, decoratorsToLoad = []) {
  * @returns {void}
  */
 async function save(adapter, directory, metadata, decorators = []) {
-  const metadataFilePath = path.join(
-    directory,
-    adapter.getFilenameFor('metadata')
-  );
+  const iconsFilePath = path.join(directory, adapter.getFilenameFor('icons'));
 
-  await fs.ensureFile(metadataFilePath);
-  await fs.writeFile(metadataFilePath, adapter.serialize(metadata), 'utf8');
+  await fs.ensureFile(iconsFilePath);
+  await fs.writeFile(iconsFilePath, adapter.serialize(metadata), 'utf8');
 
   await Promise.all(
     decorators.map(async ({ decorator, data }) => {

@@ -40,12 +40,16 @@ function validate(metadata, decoratorsWithData = []) {
   }
 
   for (const { decorator, data } of decoratorsWithData) {
-    const { error } = Joi.validate(data, decorator.schema);
-    if (error) {
-      throw new Error(error.annotate());
+    if (decorator.schema) {
+      const { error } = Joi.validate(data, decorator.schema);
+      if (error) {
+        throw new Error(error.annotate());
+      }
     }
 
-    decorator.validate(metadata.icons, data);
+    if (decorator.validate) {
+      decorator.validate(metadata.icons, data);
+    }
   }
 }
 

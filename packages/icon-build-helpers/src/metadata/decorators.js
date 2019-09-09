@@ -7,11 +7,13 @@
 
 'use strict';
 
+const { pascal } = require('change-case');
 const Joi = require('joi');
 
 /**
  * @typedef {Decorator}
  * @property {string} name
+ * @property {boolean?} generated
  * @property {JoiSchema} schema
  * @property {Function} decorate
  * @property {Function} validate
@@ -187,25 +189,26 @@ const aliases = {
   },
 };
 
-const deprecated = {
-  name: 'deprecated',
-  schema: Joi.object().keys({
-    deprecated: Joi.array()
-      .items(
-        Joi.object().keys({
-          name: Joi.string().required(),
-          reason: Joi.string(),
-          alternatives: Joi.array().items(Joi.string()),
-        })
-      )
-      .required(),
-  }),
-  decorate() {},
-  validate() {},
+const moduleName = {
+  name: 'moduleName',
+  generated: true,
+  decorate(index) {
+    for (const icon of index) {
+      icon.moduleName = getModuleName(icon.name);
+    }
+  },
 };
+
+function getModuleName(name) {
+  if (isNaN(name[0])) {
+    return pascal(name);
+  }
+
+  return '_' + pascal(name);
+}
 
 module.exports = {
   categories,
   aliases,
-  deprecated,
+  moduleName,
 };

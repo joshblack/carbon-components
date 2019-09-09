@@ -12,12 +12,6 @@ const path = require('path');
 const { load } = require('./storage');
 const { validate } = require('./validate');
 
-// Output metadata.json -> `[icon]-[metadata]-index.json`? file
-// 1) Load base metadata.<format> file
-// 2) Load each <decorator>.<format> file
-// 3) Validate each according to schema
-// 4) Bring decorator info into metadata under each icon name
-// 5) Write icon info and each decorator to `metadata.json`
 async function build(adapter, directory, decoratorsToBuild = []) {
   const { metadata, decorators } = await load(
     adapter,
@@ -27,11 +21,17 @@ async function build(adapter, directory, decoratorsToBuild = []) {
 
   validate(metadata, decorators);
 
-  const indexFilePath = path.join(directory, 'build-info.json');
+  const indexFilePath = path.join(directory, 'metadata.json');
   const index = Object.assign({}, metadata);
 
   // Add each decorator data to the index, decorator names should be unique
   for (const { decorator, data } of decorators) {
+    // Decorators that are generated won't have any data associated with them as
+    // they operate on the icon list in-memory versus saving any data to disk.
+    if (!data) {
+      continue;
+    }
+
     // Ergonomic check to see if the decorator has a top-level key that matches
     // its name. If so, we'll include the contents as a convenience instead of
     // duplicate the key. For example, instead of:
@@ -47,13 +47,17 @@ async function build(adapter, directory, decoratorsToBuild = []) {
   // For each decorator, decorate the icon index with the given loaded data for
   // the decorator
   for (const { decorator, data } of decorators) {
-    decorator.decorate(index.icons, data);
+    if (decorator.decorate) {
+      decorator.decorate(index.icons, data);
+    }
   }
 
   await fs.ensureFile(indexFilePath);
   await fs.writeJson(indexFilePath, index, {
     spaces: 2,
   });
+
+  return index;
 }
 
 module.exports = {
