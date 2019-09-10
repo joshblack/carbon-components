@@ -1,6 +1,7 @@
 {
   "name": "@carbon/react-hooks",
   "private": true,
+  "description": "Generalized hooks for React applications and libraries",
   "version": "10.0.0",
   "license": "Apache-2.0",
   "main": "lib/index.js",
@@ -18,8 +19,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "yarn clean && rollup -c",
-    "clean": "rimraf es lib",
+    "build": "yarn clean && rollup -c && mkdir docs && jsdoc2md -f 'src/**/*.js' > docs/jsdoc.md",
+    "clean": "rimraf docs es lib",
     "develop": "start-storybook -p 3000",
     "watch": "yarn clean && rollup -c -w"
   },
@@ -30,6 +31,7 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "@carbon/test-utils": "10.3.0",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addons": "^5.1.11",
@@ -39,6 +41,7 @@
     "browserslist-config-carbon": "10.4.0",
     "carbon-components": "10.6.0",
     "css-loader": "^3.2.0",
+    "jsdoc-to-markdown": "^5.0.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "node-sass": "^4.12.0",

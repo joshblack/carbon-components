@@ -5,29 +5,15 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { render, cleanup } from '@carbon/test-utils/react';
+import React from 'react';
+import { act } from 'react-dom/test-utils';
+import { useAnnouncer } from '../useAnnouncer';
+
 jest.useFakeTimers();
 
 describe('useAnnouncer', () => {
-  let React;
-  let act;
-  let render;
-  let cleanup;
-  let useAnnouncer;
-
-  beforeEach(() => {
-    jest.resetModules();
-    React = require('react');
-    act = require('react-dom/test-utils').act;
-    render = require('../test-helpers').render;
-    cleanup = require('../test-helpers').cleanup;
-    useAnnouncer = require('../useAnnouncer').useAnnouncer;
-  });
-
-  afterEach(() => {
-    if (cleanup) {
-      cleanup();
-    }
-  });
+  afterEach(cleanup);
 
   it('should create a live region region for each aria-live mode', () => {
     function Component() {

@@ -5,29 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import { render, cleanup } from '@carbon/test-utils/react';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import { usePortalNode } from '../usePortalNode';
+
 describe('usePortalNode', () => {
-  let React;
-  let ReactDOM;
-  let act;
-  let render;
-  let cleanup;
-  let usePortalNode;
-
-  beforeEach(() => {
-    jest.resetModules();
-    React = require('react');
-    ReactDOM = require('react-dom');
-    act = require('react-dom/test-utils').act;
-    render = require('../test-helpers').render;
-    cleanup = require('../test-helpers').cleanup;
-    usePortalNode = require('../usePortalNode').usePortalNode;
-  });
-
-  afterEach(() => {
-    if (cleanup) {
-      cleanup();
-    }
-  });
+  afterEach(cleanup);
 
   it('should create a portal node', () => {
     const testId = 'test-id';

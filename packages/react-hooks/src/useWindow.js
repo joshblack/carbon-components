@@ -39,52 +39,54 @@ function identity(fn) {
  * Provides `window.{scrollX,scrollY}` values that are guaranteed to be
  * up-to-date whenever the browser is scrolled
  */
-export function useWindowScroll(decorateUpdater = identity, cleanup) {
-  const forceUpdate = useForceUpdate();
+export function useWindowScroll(throttle = identity) {
   const supportsPassive = usePassive();
   const options = supportsPassive ? { passive: true } : undefined;
-  const updater = useMemo(() => decorateUpdater(forceUpdate), [
-    decorateUpdater,
-    forceUpdate,
-  ]);
-
-  useEventListener(window, 'scroll', updater, options);
+  const [value, updateValue] = useState({});
+  const updater = useMemo(
+    () =>
+      throttle(() => {
+        updateValue({
+          scrollX: window.scrollX,
+          scrollY: window.scrollY,
+        });
+      }),
+    [throttle]
+  );
 
   useEffect(() => {
-    if (cleanup) {
-      cleanup(updater);
-    }
-  }, [updater]);
-
-  // useWindowEvent('scroll', options);
-
-  if (canUseDOM) {
-    return {
-      scrollX: window.scrollX,
-      scrollY: window.scrollY,
+    window.addEventListener('scroll', updater, options);
+    return () => {
+      window.removeEventListener('scroll', updater);
     };
-  }
+  }, [options, updater]);
+  // useEventListener(window, 'scroll', updater, options);
 
-  return {};
+  return value;
 }
 
 /**
  * Provides window width and height values that are guaranteed to be
  * up-to-date whenever the browser is resized
  */
-export function useWindowResize() {
+export function useWindowResize(throttle = identity) {
   const supportsPassive = usePassive();
   const options = supportsPassive ? { passive: true } : undefined;
-  useWindowEvent('resize', options);
+  const [value, updateValue] = useState({});
+  const updater = useMemo(
+    () =>
+      throttle(() => {
+        updateValue({
+          innerWidth: window.innerWidth,
+          innerHeight: window.innerHeight,
+          outerWidth: window.outerWidth,
+          outerHeight: window.outerHeight,
+        });
+      }),
+    [throttle]
+  );
 
-  if (canUseDOM) {
-    return {
-      innerWidth: window.innerWidth,
-      innerHeight: window.innerHeight,
-      outerWidth: window.outerWidth,
-      outerHeight: window.outerHeight,
-    };
-  }
+  useEventListener(window, 'resize', updater, options);
 
-  return {};
+  return value;
 }

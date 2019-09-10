@@ -6,16 +6,16 @@
  */
 
 describe('useId', () => {
-  let React;
   let render;
   let cleanup;
+  let React;
   let useId;
 
   beforeEach(() => {
     jest.resetModules();
+    render = require('@carbon/test-utils/react').render;
+    cleanup = require('@carbon/test-utils/react').cleanup;
     React = require('react');
-    render = require('../test-helpers').render;
-    cleanup = require('../test-helpers').cleanup;
     useId = require('../useId').useId;
   });
 
