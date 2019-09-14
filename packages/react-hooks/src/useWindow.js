@@ -5,10 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { useEffect, useMemo } from 'react';
-import throttle from 'lodash.throttle';
-import { useEventListener } from './useEventListener';
-import { useForceUpdate } from './useForceUpdate';
+import { useEffect, useState } from 'react';
 import { usePassive } from './usePassive';
 
 const canUseDOM = !!(
@@ -18,49 +15,29 @@ const canUseDOM = !!(
 );
 
 /**
- * Helper hook that will force an update for any window event that occurs. We
- * force the update so that the calling hook can return values from `window`
- * directly.
- *
- * @param {string} name - the name of the window event
- * @param {object?} options - optional options for the event listener
- */
-function useWindowEvent(name, options) {
-  const forceUpdate = useForceUpdate();
-  // const updater = useMemo(() => throttle(forceUpdate, 300), [forceUpdate]);
-  useEventListener(window, name, forceUpdate, options);
-}
-
-function identity(fn) {
-  return fn;
-}
-
-/**
  * Provides `window.{scrollX,scrollY}` values that are guaranteed to be
  * up-to-date whenever the browser is scrolled
  */
-export function useWindowScroll(throttle = identity) {
+export function useWindowScroll() {
+  const [value, updateValue] = useState({
+    scrollX: canUseDOM ? window.scrollX : null,
+    scrollY: canUseDOM ? window.scrollY : null,
+  });
   const supportsPassive = usePassive();
   const options = supportsPassive ? { passive: true } : undefined;
-  const [value, updateValue] = useState({});
-  const updater = useMemo(
-    () =>
-      throttle(() => {
-        updateValue({
-          scrollX: window.scrollX,
-          scrollY: window.scrollY,
-        });
-      }),
-    [throttle]
-  );
 
   useEffect(() => {
-    window.addEventListener('scroll', updater, options);
+    function handler() {
+      updateValue({
+        scrollX: window.scrollX,
+        scrollY: window.scrollY,
+      });
+    }
+    window.addEventListener('scroll', handler, options);
     return () => {
-      window.removeEventListener('scroll', updater);
+      window.removeEventListener('scroll', handler);
     };
-  }, [options, updater]);
-  // useEventListener(window, 'scroll', updater, options);
+  }, [options]);
 
   return value;
 }
@@ -69,24 +46,30 @@ export function useWindowScroll(throttle = identity) {
  * Provides window width and height values that are guaranteed to be
  * up-to-date whenever the browser is resized
  */
-export function useWindowResize(throttle = identity) {
+export function useWindowResize() {
+  const [value, updateValue] = useState({
+    innerWidth: canUseDOM ? window.innerWidth : null,
+    innerHeight: canUseDOM ? window.innerHeight : null,
+    outerWidth: canUseDOM ? window.outerWidth : null,
+    outerHeight: canUseDOM ? window.outerHeight : null,
+  });
   const supportsPassive = usePassive();
   const options = supportsPassive ? { passive: true } : undefined;
-  const [value, updateValue] = useState({});
-  const updater = useMemo(
-    () =>
-      throttle(() => {
-        updateValue({
-          innerWidth: window.innerWidth,
-          innerHeight: window.innerHeight,
-          outerWidth: window.outerWidth,
-          outerHeight: window.outerHeight,
-        });
-      }),
-    [throttle]
-  );
 
-  useEventListener(window, 'resize', updater, options);
+  useEffect(() => {
+    function handler() {
+      updateValue({
+        innerWidth: window.innerWidth,
+        innerHeight: window.innerHeight,
+        outerWidth: window.outerWidth,
+        outerHeight: window.outerHeight,
+      });
+    }
+    window.addEventListener('resize', handler, options);
+    return () => {
+      window.removeEventListener('resize', handler);
+    };
+  }, [options]);
 
   return value;
 }

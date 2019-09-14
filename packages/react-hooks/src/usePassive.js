@@ -5,8 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { useEffect, useRef } from 'react';
-import { useForceUpdate } from './useForceUpdate';
+import { useEffect, useState } from 'react';
 
 let shouldUsePassive = null;
 
@@ -43,15 +42,13 @@ export function isPassiveSupported() {
  * }
  */
 export function usePassive() {
-  const passive = useRef(shouldUsePassive);
-  const forceUpdate = useForceUpdate();
+  const [passive, updatePassive] = useState(shouldUsePassive);
 
   useEffect(() => {
-    if (passive.current === null) {
-      passive.current = isPassiveSupported();
-      forceUpdate();
+    if (passive === null) {
+      updatePassive(isPassiveSupported());
     }
-  }, [forceUpdate]);
+  }, []);
 
-  return passive.current;
+  return passive;
 }
