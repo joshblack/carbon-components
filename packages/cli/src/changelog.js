@@ -9,6 +9,7 @@
 
 const parse = require('@commitlint/parse');
 const execa = require('execa');
+const semver = require('semver');
 
 // We keep a list of commits that are process-oriented that we never want to
 // show up in generated changelogs
@@ -37,19 +38,29 @@ const headerDenyList = new Set([
  * @returns {string}
  */
 async function generate(packages, lastTag, latestTag) {
+  const bump = getSemverBumpFromTags(lastTag, latestTag);
   const packageCommitsInRange = await Promise.all(
     packages.map(pkg => getCommitsInRange(pkg, `${lastTag}...${latestTag}`))
   );
   const packageCommitsToInclude = packageCommitsInRange.filter(
-    ({ commits }) => {
-      return commits.length > 0;
-    }
+    ({ commits }) => commits.length > 0
   );
 
   return [
     getMarkdownTitle(lastTag, latestTag),
-    ...getMarkdownSections(packageCommitsToInclude),
+    ...getMarkdownSections(packageCommitsToInclude, bump),
   ].join('\n');
+}
+
+function getSemverBumpFromTags(lastTag, latestTag) {
+  const from = semver.coerce(lastTag);
+  const to = semver.coerce(latestTag);
+
+  if (from === null || to === null) {
+    return null;
+  }
+
+  return semver.diff(from, to);
 }
 
 const sectionTypes = [
@@ -81,9 +92,9 @@ const commitUrl = 'https://github.com/carbon-design-system/carbon/commit';
  * @param {Array} packages
  * @returns {Array}
  */
-function getMarkdownSections(packages) {
+function getMarkdownSections(packages, bump) {
   return packages.map(({ name, version, commits }) => {
-    let section = `## \`${name}@${version}\`\n`;
+    let section = `## \`${name}\`\n`;
 
     for (const { title, types } of sectionTypes) {
       const commitsForSection = commits.filter(commit => {
@@ -94,7 +105,9 @@ function getMarkdownSections(packages) {
         continue;
       }
 
-      let subsection = `### ${title}\n`;
+      const latestVersion =
+        bump === 'patch' ? semver.inc(version, bump) : version;
+      let subsection = `### ${title}@${latestVersion}\n`;
 
       for (const commit of commitsForSection) {
         const { hash, info } = commit;
