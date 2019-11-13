@@ -70,6 +70,9 @@ export const CarbonThemesPanel = ({ api, active }) => {
             <option key="g100" value="g100">
               g100
             </option>
+            <option key="editorial" value="editorial">
+              editorial
+            </option>
           </Form.Select>
         </Form.Field>
       </Form>

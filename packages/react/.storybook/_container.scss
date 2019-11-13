@@ -46,4 +46,23 @@ $prefix: 'bx';
   :root[storybook-carbon-theme='g100'] {
     @include carbon--theme($carbon--theme--g100, true);
   }
+
+  :root[storybook-carbon-theme='editorial'] {
+    @include carbon--theme(
+      map-merge(
+        $carbon--theme--white,
+        (
+          body-short-01: map-get($carbon--theme--white, 'body-short-02'),
+          body-long-01: map-get($carbon--theme--white, 'body-long-02'),
+          container-02: 2.5rem,
+          container-03: 3rem,
+          container-04: 3rem,
+          container-05: 4rem,
+          icon-size-01: 1.25rem,
+          icon-size-02: 1.5rem,
+        )
+      ),
+      true
+    );
+  }
 }

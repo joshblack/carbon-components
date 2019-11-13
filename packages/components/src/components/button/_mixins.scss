@@ -20,7 +20,8 @@
   justify-content: space-between;
   vertical-align: top;
   flex-shrink: 0;
-  min-height: rem($button-height);
+  // min-height: rem($button-height);
+  min-height: $button-height;
   padding: $button-padding;
   border-radius: $button-border-radius;
   text-align: left;
@@ -40,11 +41,16 @@
   }
 
   .#{$prefix}--btn__icon {
+    $padding: calc(($container-04 - $icon-size-01) / 2 - rem(3px));
+
     position: absolute;
-    right: rem(16px);
+    // right: rem(16px);
+    right: $padding;
     flex-shrink: 0;
-    width: rem(16px);
-    height: rem(16px);
+    // width: rem(16px);
+    // height: rem(16px);
+    width: $icon-size-01;
+    height: $icon-size-01;
   }
 }
 
