@@ -95,6 +95,7 @@
 
   .#{$prefix}--accordion__content {
     display: none;
+    visibility: hidden;
     // Transition property for when the accordion closes
     transition: padding motion(standard, productive) $duration--fast-02;
     padding-left: $carbon--spacing-05;
@@ -112,6 +113,7 @@
   .#{$prefix}--accordion__item--collapsing .#{$prefix}--accordion__content,
   .#{$prefix}--accordion__item--expanding .#{$prefix}--accordion__content {
     display: block;
+    visibility: visible;
   }
 
   .#{$prefix}--accordion__item--collapsing .#{$prefix}--accordion__content {

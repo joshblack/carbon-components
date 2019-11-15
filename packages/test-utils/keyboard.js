@@ -6,6 +6,7 @@
  */
 
 import tabbable from 'tabbable';
+import { isElementVisible } from './dom';
 
 /**
  * Simulates the browser Tab behavior, meaning that as we press tab we expect
@@ -23,7 +24,9 @@ import tabbable from 'tabbable';
  * @returns {HTMLElement}
  */
 export function pressTab(node = document.body) {
-  const nodes = tabbable(node, { includeContainer: true });
+  const nodes = tabbable(node, { includeContainer: true }).filter(
+    isElementVisible
+  );
 
   if (nodes.length === 0) {
     return;
@@ -54,7 +57,9 @@ export function pressTab(node = document.body) {
  * @returns {HTMLElement}
  */
 export function pressShiftTab(node = document.body) {
-  const nodes = tabbable(node, { includeContainer: true });
+  const nodes = tabbable(node, { includeContainer: true }).filter(
+    isElementVisible
+  );
 
   if (nodes.length === 0) {
     return;

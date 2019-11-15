@@ -11,6 +11,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { match, keys } from '../../internal/keyboard';
+import deprecate from '../../prop-types/deprecate';
 
 const { prefix } = settings;
 const defaultRenderExpando = props => <button {...props} />;
@@ -18,11 +19,11 @@ const defaultRenderExpando = props => <button {...props} />;
 function AccordionItem({
   children,
   className: customClassName,
-  iconDescription = 'Expand/Collapse',
   open = false,
   onHeadingClick,
   renderExpando: Expando = defaultRenderExpando,
   title = 'title',
+  iconDescription, // eslint-disable-line no-unused-vars
   ...rest
 }) {
   const [isOpen, setIsOpen] = useState(open);
@@ -74,12 +75,8 @@ function AccordionItem({
         className={`${prefix}--accordion__heading`}
         onClick={onClick}
         onKeyDown={onKeyDown}
-        title={iconDescription}
         type="button">
-        <ChevronRight16
-          aria-label={iconDescription}
-          className={`${prefix}--accordion__arrow`}
-        />
+        <ChevronRight16 className={`${prefix}--accordion__arrow`} />
         <div className={`${prefix}--accordion__title`}>{title}</div>
       </Expando>
       <div className={`${prefix}--accordion__content`}>{children}</div>
@@ -112,7 +109,12 @@ AccordionItem.propTypes = {
   /**
    * The description of the expando icon.
    */
-  iconDescription: PropTypes.string,
+  iconDescription: deprecate(
+    PropTypes.string,
+    'The `iconDescription` prop on `AccordionItem` has been deprecated and ' +
+      'has been replaced by `title`. It currently has no effect and will be ' +
+      'removed in the next major release of `carbon-components-react`.'
+  ),
 
   /**
    * `true` to open the expando.
