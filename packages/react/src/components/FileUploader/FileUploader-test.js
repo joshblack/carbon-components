@@ -9,10 +9,14 @@ import React from 'react';
 import { settings } from 'carbon-components';
 import { Close16, CheckmarkFilled16 } from '@carbon/icons-react';
 import { mount, shallow } from 'enzyme';
-import FileUploader, { FileUploaderButton, Filename } from './FileUploader';
-import FileUploaderDropContainer from './FileUploaderDropContainer';
-import FileUploaderItem from './FileUploaderItem';
-import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
+import {
+  default as FileUploader,
+  FileUploaderButton,
+  Filename,
+  FileUploaderDropContainer,
+  FileUploaderItem,
+  FileUploaderSkeleton,
+} from '../FileUploader';
 import Loading from '../Loading';
 
 const { prefix } = settings;

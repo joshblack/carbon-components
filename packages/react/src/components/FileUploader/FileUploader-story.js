@@ -19,7 +19,7 @@ import {
   text,
 } from '@storybook/addon-knobs';
 import { settings } from 'carbon-components';
-import FileUploader, { FileUploaderButton } from '../FileUploader';
+import { default as FileUploader, FileUploaderButton } from '../FileUploader';
 import FileUploaderSkeleton from '../FileUploader/FileUploader.Skeleton';
 import Button from '../Button';
 import FileUploaderItem from './FileUploaderItem';
