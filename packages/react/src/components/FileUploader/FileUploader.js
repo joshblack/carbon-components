@@ -18,6 +18,7 @@ import {
 import Loading from '../Loading';
 import uid from '../../tools/uniqueId';
 import { ButtonKinds } from '../../prop-types/types';
+import Filename from './Filename';
 
 const { prefix } = settings;
 
@@ -197,61 +198,6 @@ export class FileUploaderButton extends Component {
     );
   }
 }
-
-export function Filename({ iconDescription, status, invalid, ...other }) {
-  switch (status) {
-    case 'uploading':
-      return (
-        <Loading description={iconDescription} withOverlay={false} small />
-      );
-    case 'edit':
-      return (
-        <>
-          {invalid && <WarningFilled16 className={`${prefix}--file-invalid`} />}
-          <Close16
-            className={`${prefix}--file-close`}
-            aria-label={iconDescription}
-            {...other}>
-            {iconDescription && <title>{iconDescription}</title>}
-          </Close16>
-        </>
-      );
-    case 'complete':
-      return (
-        <CheckmarkFilled16
-          className={`${prefix}--file-complete`}
-          aria-label={iconDescription}
-          {...other}>
-          {iconDescription && <title>{iconDescription}</title>}
-        </CheckmarkFilled16>
-      );
-    default:
-      return null;
-  }
-}
-
-Filename.propTypes = {
-  /**
-   * Provide a description of the SVG icon to denote file upload status
-   */
-  iconDescription: PropTypes.string,
-
-  /**
-   * Status of the file upload
-   */
-  status: PropTypes.oneOf(['edit', 'complete', 'uploading']),
-
-  /**
-   * Provide a custom tabIndex value for the <Filename>
-   */
-  tabIndex: PropTypes.string,
-};
-
-Filename.defaultProps = {
-  iconDescription: 'Uploading file',
-  status: 'uploading',
-  tabIndex: '0',
-};
 
 export default class FileUploader extends Component {
   static propTypes = {
