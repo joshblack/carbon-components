@@ -158,7 +158,13 @@ const plugins = [
     removeNonInheritableGroupAttrs: true,
   },
   {
-    removeUselessStrokeAndFill: true,
+    // We disable `stroke` for this plugin as enabling it will cause relevant
+    // stroke-* attributes to be removed from the resulting SVG. This can cause
+    // issues with pictograms that use stroke attributes for rendering
+    // correctly
+    removeUselessStrokeAndFill: {
+      stroke: false,
+    },
   },
   {
     removeUnusedNS: true,
@@ -198,9 +204,9 @@ const plugins = [
       attrs: [
         'class',
         'data-name',
-        // Remove all fill attributes where the value is not "none"
+        // Remove all fill and stroke attributes where the value is not "none"
         // https://github.com/svg/svgo/pull/977
-        '*:fill:((?!^none$).)*',
+        '*:(fill|stroke):((?!^none$).)*',
       ],
     },
   },
@@ -223,40 +229,7 @@ const svg2jsAsync = (...args) =>
     });
   });
 
-const parse = async (svg, name) => {
-  const root = await svg2jsAsync(svg);
-  try {
-    return convert(root.content[0]);
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(error);
-    // eslint-disable-next-line no-console
-    console.log(`Error parsing icon with name: ${name}`);
-  }
-};
-
-const convert = root => {
-  const { elem, attrs = {}, content } = root;
-  const safeFormat = {
-    elem,
-    attrs: Object.keys(attrs).reduce((acc, attr) => {
-      return {
-        ...acc,
-        [attr]: attrs[attr].value,
-      };
-    }, {}),
-  };
-
-  if (content) {
-    safeFormat.content = content.map(convert);
-  }
-
-  return safeFormat;
-};
-
 module.exports = {
   svgo,
   plugins,
-  svg2js: svg2jsAsync,
-  parse,
 };

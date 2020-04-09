@@ -14,8 +14,7 @@ const path = require('path');
 const prettier = require('prettier');
 const { rollup } = require('rollup');
 const { flatMapAsync } = require('../../tools');
-const { parse } = require('./svgo');
-const optimize = require('./optimize');
+const { parse } = require('./svg');
 const virtual = require('../plugins/virtual');
 
 const prettierOptions = {
@@ -26,81 +25,79 @@ const prettierOptions = {
   proseWrap: 'always',
 };
 
-async function builder(source, { cwd } = {}) {
-  const optimized = await optimize(source, { cwd });
+//
+const Registry = require('../../metadata/registry');
+//
 
-  reporter.info(`Building the module source for ${optimized.length} icons...`);
+async function run(directory, { output, optimized } = {}) {
+  const registry = await Registry.create(directory);
+  console.log(registry.get('composer-edit'));
+  return;
 
-  const BUNDLE_FORMATS = [
-    {
-      directory: 'es',
-      file: path.join(cwd, 'es/index.js'),
-      format: 'esm',
-    },
-    {
-      directory: 'lib',
-      file: path.join(cwd, 'lib/index.js'),
-      format: 'cjs',
-    },
-  ];
+  reporter.info(`Building the module source for ${registry.size} icons...`);
 
-  reporter.info('Building module source...');
-
-  // Build up icon index. Useful for looking up size info for a particular icon.
-  const index = optimized.reduce((acc, icon) => {
-    const { basename, prefix } = icon;
-    const key = getIndexName(basename, prefix);
-    if (acc[key]) {
-      return {
-        ...acc,
-        [key]: {
-          sizes: acc[key].sizes.concat(icon.size).sort(),
-        },
-      };
-    }
-    return {
-      ...acc,
-      [key]: {
-        sizes: [icon.size],
-      },
-    };
-  }, {});
-
+  const ORIGINAL_SIZE = 32;
   const SCALED_SIZES = [24, 20, 16];
-  const files = await flatMapAsync(optimized, async file => {
-    const { basename, size, prefix } = file;
+  const files = await flatMapAsync(Array.from(registry.values()), icon => {
+    return flatMapAsync(icon.assets, async asset => {
+      const artifact = optimized.find(item => item.filepath === asset.filepath);
+      if (!artifact) {
+        throw new Error(
+          `Unable to find build artifact for asset ${asset.filepath}`
+        );
+      }
 
-    if (size === 32) {
-      const key = getIndexName(basename, prefix);
-      const { sizes } = index[key];
-      const defaultIcon = await createDescriptorFromFile(file);
-      const scaledIcons = await Promise.all(
-        // Only scale down for sizes we don't have icons for
-        SCALED_SIZES.filter(size => sizes.indexOf(size) === -1).map(size =>
-          createDescriptorFromFile({
-            ...file,
+      const sizes = [asset.size];
+      if (asset.size === ORIGINAL_SIZE) {
+        const sizesToBuild = SCALED_SIZES.filter(size => {
+          return !icon.assets.find(asset => asset.size === size);
+        });
+        sizes.push(...sizesToBuild);
+      }
+
+      return Promise.all(
+        sizes.map(async size => {
+          const descriptor = await createDescriptor(
+            icon.id,
+            artifact.optimized.data,
             size,
-            original: 32,
-          })
-        )
+            size !== asset.size ? asset.size : undefined
+          );
+          const { source, moduleName } = createIconSource(
+            icon.id,
+            descriptor,
+            size,
+            icon.namespace
+          );
+
+          console.log(icon.id, size, moduleName);
+
+          return {
+            ...asset,
+            id: icon.id,
+            namespace: icon.namespace,
+            descriptor,
+            source,
+            moduleName,
+          };
+        })
       );
-      return [defaultIcon, ...scaledIcons];
-    }
-    return Object.assign({}, file, await createDescriptorFromFile(file));
+    });
   });
 
+  console.log(JSON.stringify(files, null, 2));
+  return;
   reporter.info('Building JavaScript modules...');
 
   const inputs = files.map(file => {
-    const { basename, prefix, size, source } = file;
-    const formattedPrefix = prefix.filter(step => isNaN(step));
-    const moduleFolder = path.join(...formattedPrefix, basename);
+    const { id, namespace, size } = file;
+    const formattedPrefix = namespace.filter(step => isNaN(step));
+    const moduleFolder = path.join(...formattedPrefix, id);
     const filepath = path.join(moduleFolder, size ? `${size}.js` : 'index.js');
 
     return {
       ...file,
       filepath,
-      source,
     };
   });
 
@@ -125,6 +122,19 @@ async function builder(source, { cwd } = {}) {
       ),
     ],
   });
+
+  const BUNDLE_FORMATS = [
+    {
+      directory: 'es',
+      file: path.join(output, 'es/index.js'),
+      format: 'esm',
+    },
+    {
+      directory: 'lib',
+      file: path.join(output, 'lib/index.js'),
+      format: 'cjs',
+    },
+  ];
 
   await Promise.all(
     BUNDLE_FORMATS.map(({ directory, format }) => {
@@ -199,13 +209,19 @@ async function builder(source, { cwd } = {}) {
     };
   });
 
-  await fs.writeJson(path.join(cwd, 'build-info.json'), formattedOutput, {
+  await fs.writeJson(path.join(output, 'build-info.json'), formattedOutput, {
     spaces: 2,
   });
 
   reporter.success('Done! 🎉');
 }
 
+/**
+ * @param {string} name
+ * @param {string} [size]
+ * @param {Array<string>} [prefixParts]
+ * @param {object} descriptor
+ */
 function getModuleName(name, size, prefixParts, descriptor) {
   const width = parseInt(descriptor.attrs.width, 10);
   const height = parseInt(descriptor.attrs.height, 10);
@@ -245,23 +261,35 @@ function getModuleName(name, size, prefixParts, descriptor) {
   return '_' + pascalCase(name) + size;
 }
 
-function createIconSource(file, descriptor) {
-  const { basename, prefix, size } = file;
+/**
+ * @param {string} id
+ * @param {object} descriptor
+ * @param {string} [size]
+ * @param {Array<string>} [namespace]
+ * @returns {object}
+ */
+function createIconSource(id, descriptor, size, namespace = []) {
   return {
     source: prettier.format(
       `export default ${JSON.stringify(descriptor)};`,
       prettierOptions
     ),
-    moduleName: getModuleName(basename, size, prefix, descriptor),
+    moduleName: getModuleName(id, size, namespace, descriptor),
   };
 }
 
-async function createDescriptorFromFile(file) {
-  const { basename, size, optimized, original } = file;
-  const info = await parse(optimized.data, basename);
+/**
+ * @param {string} name
+ * @param {string} data
+ * @param {string} [size]
+ * @param {string} [original]
+ * @returns {object}
+ */
+async function createDescriptor(name, data, size, original) {
+  const info = await parse(data, name);
   const descriptor = {
     ...info,
-    name: basename,
+    name,
   };
 
   if (size) {
@@ -277,21 +305,9 @@ async function createDescriptorFromFile(file) {
     descriptor.attrs.height = height;
   }
 
-  const { source, moduleName } = createIconSource(file, descriptor);
-
-  return {
-    ...file,
-    descriptor,
-    source,
-    moduleName,
-  };
+  return descriptor;
 }
 
-function getIndexName(basename, prefix) {
-  return prefix
-    .filter(part => isNaN(part))
-    .concat(basename)
-    .join('/');
-}
-
-module.exports = builder;
+module.exports = {
+  run,
+};

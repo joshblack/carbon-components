@@ -9,14 +9,14 @@
 
 const react = require('./react/builder');
 const vanilla = require('./vanilla/builder');
+const svg = require('./svg/builder');
 
 const builders = {
   react: {
     run: react,
   },
-  vanilla: {
-    run: vanilla,
-  },
+  vanilla,
+  svg,
 };
 
 module.exports = builders;
