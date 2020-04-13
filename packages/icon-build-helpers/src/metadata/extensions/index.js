@@ -8,6 +8,7 @@
 'use strict';
 
 const assets = require('./assets');
+const build = require('./build');
 const categories = require('./categories');
 const deprecated = require('./deprecated');
 const icons = require('./icons');
@@ -27,6 +28,7 @@ const pictograms = require('./pictograms');
 
 module.exports = {
   assets,
+  build,
   categories,
   deprecated,
   icons,

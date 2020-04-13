@@ -21,18 +21,16 @@
   },
   "scripts": {
     "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib"
+    "clean": "rimraf es lib umd"
   },
   "dependencies": {
     "@carbon/icon-helpers": "^10.6.0"
   },
   "devDependencies": {
-    "@carbon/cli-reporter": "^10.3.0",
+    "@carbon/icon-build-helpers": "^0.4.2",
     "@carbon/icons": "^10.9.3",
     "fs-extra": "^8.1.0",
-    "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
-    "rollup": "^1.15.1",
     "vue": "^2.6.8"
   },
   "sideEffects": false

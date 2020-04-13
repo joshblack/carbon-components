@@ -47,9 +47,7 @@ const icons = {
       const icon = registry.get(entry.name);
 
       // Add namespace information for the icon
-      if (Array.isArray(icon.namespace) && icon.namespace.length > 0) {
-        entry.namespace = icon.namespace.join('/');
-      }
+      entry.namespace = Array.isArray(icon.namespace) ? icon.namespace : [];
 
       // We currently support bespoke assets called "glyphs". If there is no
       // size for an asset, then for icons we would call it a glyph. If the

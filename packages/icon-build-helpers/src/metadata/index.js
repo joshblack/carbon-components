@@ -41,19 +41,60 @@ async function check({
  * @param {string} options.input The directory of source files
  * @param {string} [options.output] The directory for the built metadata
  * @param {Array<Extension>} [options.extensions] The extensions to load
- * @returns {Promise<void>}
+ * @returns {Promise<object>}
  */
 async function build({
   adapter = adapters.yml,
   extensions = [Extensions.icons],
   input,
+  svgDir = input,
   output = input,
+}) {
+  const registry = await Registry.create(svgDir);
+  const loaded = await Storage.load(adapter, input, extensions);
+  validate(registry, loaded);
+
+  const metadataFilePath = path.join(output, 'metadata.json');
+  const metadata = {};
+  const context = {
+    input: svgDir,
+  };
+
+  // For each extension, extend the icon metadata with the given loaded data
+  // for the extension
+  for (const { data, extend } of loaded) {
+    if (extend) {
+      await extend(metadata, data, registry, context);
+    }
+  }
+
+  await fs.ensureFile(metadataFilePath);
+  await fs.writeJson(metadataFilePath, metadata, {
+    spaces: 2,
+  });
+
+  return metadata;
+}
+
+/**
+ * Build the metadata for the assets in the given directory with a given list of
+ * extensions
+ * @param {object} options
+ * @param {Adapter} [options.adapter] The adapter to use to load the extensions
+ * @param {string} options.input The directory of source files
+ * @param {string} [options.output] The directory for the built metadata
+ * @param {Array<Extension>} [options.extensions] The extensions to load
+ * @returns {Promise<object>}
+ */
+async function load({
+  adapter = adapters.yml,
+  extensions = [Extensions.icons],
+  input,
 }) {
   const registry = await Registry.create(path.join(input, 'svg'));
   const loaded = await Storage.load(adapter, input, extensions);
   validate(registry, loaded);
 
-  const metadataFilePath = path.join(output, 'metadata.json');
   const metadata = {};
   const context = {
     input,
@@ -63,14 +104,9 @@ async function build({
   // for the extension
   for (const { data, extend } of loaded) {
     if (extend) {
-      extend(metadata, data, registry, context);
+      await extend(metadata, data, registry, context);
     }
   }
-
-  await fs.ensureFile(metadataFilePath);
-  await fs.writeJson(metadataFilePath, metadata, {
-    spaces: 2,
-  });
 
   return metadata;
 }
@@ -131,5 +167,6 @@ module.exports = {
   // Commands to run for icon packages
   build,
   check,
+  load,
   scaffold,
 };

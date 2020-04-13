@@ -8,7 +8,8 @@
 'use strict';
 
 const react = require('./react/builder');
-const vanilla = require('./vanilla/builder');
+const vanilla = require('./vanilla');
+const vue = require('./vue');
 
 const builders = {
   react: {
@@ -16,6 +17,9 @@ const builders = {
   },
   vanilla: {
     run: vanilla,
+  },
+  vue: {
+    run: vue,
   },
 };
 

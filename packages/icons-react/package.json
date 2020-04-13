@@ -32,6 +32,7 @@
     "@carbon/icon-helpers": "^10.6.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-constant-elements": "^7.9.0",
     "@carbon/icon-build-helpers": "^0.4.2",
     "@carbon/icons": "^10.9.3"
   },
