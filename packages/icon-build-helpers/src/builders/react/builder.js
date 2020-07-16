@@ -14,6 +14,10 @@ const { rollup } = require('rollup');
 const babel = require('rollup-plugin-babel');
 const virtual = require('../plugins/virtual');
 
+const { createLogger, displayBanner } = require('@carbon/cli/src/logger');
+
+const logger = createLogger('icons-react');
+
 const BANNER = `/**
  * Copyright IBM Corp. 2019, 2020
  *
@@ -44,42 +48,129 @@ const babelConfig = {
 };
 
 async function builder(metadata, { output }) {
+  displayBanner();
+
+  logger.start(`Processing ${metadata.icons.length} icons`);
   const modules = metadata.icons.flatMap((icon) => {
     return icon.output.map((size) => {
-      const { source } = createIconComponent(
-        size.moduleName,
-        size.descriptor,
-        icon.deprecated
-      );
       return {
-        source,
+        size: size.size,
+        source: createIconFlatExport(
+          size.moduleName,
+          size.descriptor,
+          icon.deprecated
+        ),
+        entrypoint: createIconEntrypoint(
+          size.moduleName,
+          size.descriptor,
+          icon.deprecated
+        ),
         filepath: size.filepath,
         moduleName: size.moduleName,
       };
     });
   });
+  logger.stop();
+
+  const sizes = new Map([
+    [16, modules.filter((m) => m.size === 16)],
+    [20, modules.filter((m) => m.size === 20)],
+    [24, modules.filter((m) => m.size === 24)],
+    [32, modules.filter((m) => m.size === 32)],
+  ]);
+
+  logger.start(`Building size entrypoints`);
+  for (const [size, entries] of sizes) {
+    logger.start(`Bundling size: ${size}`);
+    const directory = path.join(output, `${size}`);
+    const packageJsonPath = path.join(directory, 'package.json');
+    const packageJson = {
+      main: 'lib/index.js',
+      module: 'es/index.js',
+      sideEffects: false,
+    };
+
+    const files = {
+      'index.js': `${BANNER}
+import React from 'react';
+import Icon from './Icon.js';
+export { Icon };
+`,
+    };
+    const input = {
+      'index.js': 'index.js',
+    };
+
+    await fs.ensureDir(directory);
+    await fs.writeJson(packageJsonPath, packageJson);
+
+    for (const m of entries) {
+      files['index.js'] += `${m.source}
+export { ${m.moduleName} as ${m.moduleName.replace(size, '')} };`;
+    }
+
+    logger.info('Creating rollup bundle');
+    const bundle = await rollup({
+      input: input,
+      external,
+      plugins: [
+        virtual({
+          './Icon.js': await fs.readFile(
+            path.resolve(__dirname, './components/Icon.js'),
+            'utf8'
+          ),
+          ...files,
+        }),
+        babel(babelConfig),
+      ],
+    });
+
+    const bundles = [
+      {
+        directory: path.join(directory, 'es'),
+        format: 'esm',
+      },
+      {
+        directory: path.join(directory, 'lib'),
+        format: 'commonjs',
+      },
+    ];
+
+    for (const { directory, format } of bundles) {
+      logger.info(`Writing ${format} bundle`);
+      const outputOptions = {
+        dir: directory,
+        format,
+        entryFileNames: '[name]',
+        banner: BANNER,
+      };
+
+      await bundle.write(outputOptions);
+    }
+    logger.stop();
+  }
+
+  logger.stop();
+
+  logger.start('Building package entrypoint');
 
   const files = {
-    'index.js': `${BANNER}\n\nexport { default as Icon } from './Icon.js';`,
+    'index.js': `${BANNER}
+export { default as Icon } from './Icon.js';
+`,
   };
   const input = {
     'index.js': 'index.js',
   };
   for (const m of modules) {
-    const file = `${BANNER}
-      import React from 'react';
-      import Icon from './Icon.js';
-      ${m.source}
-      export default ${m.moduleName};
-    `;
-
-    files[m.filepath] = file;
+    files[m.filepath] = m.entrypoint;
     input[m.filepath] = m.filepath;
     files[
       'index.js'
     ] += `\nexport { default as ${m.moduleName} } from '${m.filepath}';`;
   }
 
+  logger.info('Bundling entrypoint');
   const bundle = await rollup({
     input: input,
     external,
@@ -107,6 +198,7 @@ async function builder(metadata, { output }) {
   ];
 
   for (const { directory, format } of bundles) {
+    logger.start(`Writing ${format} bundle`);
     const outputOptions = {
       dir: directory,
       format,
@@ -115,8 +207,10 @@ async function builder(metadata, { output }) {
     };
 
     await bundle.write(outputOptions);
+    logger.stop();
   }
 
+  logger.info('Building UMD bundle');
   const umd = await rollup({
     input: 'index.js',
     external,
@@ -142,21 +236,28 @@ async function builder(metadata, { output }) {
       react: 'React',
     },
   });
+  logger.stop();
 }
 
-/**
- * Generate an icon component, which in our case is the string representation
- * of the component, from a given moduleName and icon descriptor.
- * @param {string} moduleName
- * @param {object} descriptor
- * @param {boolean} [isDeprecated]
- * @returns {object}
- */
-function createIconComponent(moduleName, descriptor, isDeprecated = false) {
-  const { attrs, content } = descriptor;
-  const { width, height, viewBox, ...rest } = attrs;
+function createIconFlatExport(moduleName, descriptor, isDeprecated = false) {
+  const deprecatedBlock = isDeprecated
+    ? `
+    if (__DEV__) {
+      if (!didWarnAboutDeprecation['${moduleName}']) {
+        didWarnAboutDeprecation['${moduleName}'] = true;
+        console.warn(
+          \`The ${moduleName} component has been deprecated and will be \` +
+          \`removed in the next major version of @carbon/icons-react.\`
+        );
+      }
+    }
+    `
+    : '';
+  return createIconSource(moduleName, descriptor, deprecatedBlock);
+}
 
-  const deprecatedTopLevel = isDeprecated
+function createIconEntrypoint(moduleName, descriptor, isDeprecated = false) {
+  const deprecatedPreamble = isDeprecated
     ? 'let didWarnAboutDeprecation = false;'
     : '';
   const deprecatedBlock = isDeprecated
@@ -172,12 +273,30 @@ function createIconComponent(moduleName, descriptor, isDeprecated = false) {
     }
     `
     : '';
+  const source = createIconSource(moduleName, descriptor, deprecatedBlock);
+  return `${BANNER}
+import React from 'react';
+import Icon from './Icon.js';
+${deprecatedPreamble}
+${source}
+export default ${moduleName};
+`;
+}
 
-  const source = `
-    ${deprecatedTopLevel}
+/**
+ * Generate an icon component, which in our case is the string representation
+ * of the component, from a given moduleName and icon descriptor.
+ * @param {string} moduleName
+ * @param {object} descriptor
+ * @param {string} customBlock
+ */
+function createIconSource(moduleName, descriptor, customBlock = '') {
+  const { attrs, content } = descriptor;
+  const { width, height, viewBox, ...rest } = attrs;
+  return `
     const ${moduleName} = /*#__PURE__*/ React.forwardRef(
       function ${moduleName}({ children, ...rest }, ref) {
-        ${deprecatedBlock}
+        ${customBlock}
         return (
           <Icon
             width={${width}}
@@ -193,10 +312,6 @@ function createIconComponent(moduleName, descriptor, isDeprecated = false) {
       }
     );
   `;
-
-  return {
-    source,
-  };
 }
 
 /**

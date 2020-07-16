@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "yarn clean && node tasks/build.js",
-    "clean": "rimraf es lib umd"
+    "clean": "rimraf es lib umd 16 20 24 32"
   },
   "dependencies": {
     "@carbon/icon-helpers": "^10.9.0"
