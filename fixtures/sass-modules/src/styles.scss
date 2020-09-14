@@ -1,0 +1,14 @@
+// @use 'a';
+
+// @use 'carbon-components/scss';
+
+// a module can only be configured once, the first time it is used
+@use 'theme' with (
+  $background-01: #ffffff,
+  $text-01: #000000
+);
+
+body {
+  background: theme.token('background-01');
+  color: theme.token('text-01');
+}

@@ -1,0 +1,16 @@
+@use 'sass:map';
+
+$background-01: #000000 !default;
+$text-01: #ffffff !default;
+
+$-background-01: var(--background-01, $background-01);
+$-text-01: var(--text-01, $text-01);
+
+$tokens: (
+  'background-01': $-background-01,
+  'text-01': $-text-01,
+);
+
+@function token($name) {
+  @return map.get($tokens, $name);
+}

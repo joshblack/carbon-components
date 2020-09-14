@@ -12,6 +12,7 @@
       "actions/*",
       "codemods",
       "config/*",
+      "fixtures/*",
       "packages/*"
     ],
     "nohoist": []

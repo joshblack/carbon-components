@@ -116,7 +116,6 @@ const promisePortSassDevBuild = portscanner.findAPortNotInUse(
 // Use: npm run prebuild
 gulp.task('clean', () =>
   del([
-    'scss',
     'css',
     'es',
     'umd',
