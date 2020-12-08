@@ -437,20 +437,18 @@ class FloatingMenu extends React.Component {
           {/* Non-translatable: Focus management code makes this `<span>` not actually read by screen readers */}
           <span
             ref={this.startSentinel}
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
             tabIndex="0"
-            role="link"
-            className={`${prefix}--visually-hidden`}>
-            Focus sentinel
-          </span>
+            className={`${prefix}--visually-hidden`}
+          />
           {this._getChildrenWithProps()}
           {/* Non-translatable: Focus management code makes this `<span>` not actually read by screen readers */}
           <span
             ref={this.endSentinel}
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
             tabIndex="0"
-            role="link"
-            className={`${prefix}--visually-hidden`}>
-            Focus sentinel
-          </span>
+            className={`${prefix}--visually-hidden`}
+          />
         </div>,
         !target ? document.body : target()
       );

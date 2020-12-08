@@ -74,11 +74,8 @@ exports[`ModalWrapper should render 1`] = `
       >
         <span
           className="bx--visually-hidden"
-          role="link"
           tabIndex="0"
-        >
-          Focus sentinel
-        </span>
+        />
         <div
           aria-label="Test Modal Label"
           aria-modal="true"
@@ -204,11 +201,8 @@ exports[`ModalWrapper should render 1`] = `
         </div>
         <span
           className="bx--visually-hidden"
-          role="link"
           tabIndex="0"
-        >
-          Focus sentinel
-        </span>
+        />
       </div>
     </Modal>
   </div>

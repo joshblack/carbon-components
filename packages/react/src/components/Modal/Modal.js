@@ -457,20 +457,18 @@ export default class Modal extends Component {
         {/* Non-translatable: Focus-wrap code makes this `<span>` not actually read by screen readers */}
         <span
           ref={this.startTrap}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex="0"
-          role="link"
-          className={`${prefix}--visually-hidden`}>
-          Focus sentinel
-        </span>
+          className={`${prefix}--visually-hidden`}
+        />
         {modalBody}
         {/* Non-translatable: Focus-wrap code makes this `<span>` not actually read by screen readers */}
         <span
           ref={this.endTrap}
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
           tabIndex="0"
-          role="link"
-          className={`${prefix}--visually-hidden`}>
-          Focus sentinel
-        </span>
+          className={`${prefix}--visually-hidden`}
+        />
       </div>
     );
   }
