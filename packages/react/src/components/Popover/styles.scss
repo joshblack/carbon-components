@@ -1,0 +1,62 @@
+.popover {
+  // position: relative;
+  z-index: 1000;
+
+  // debug
+  margin: 2rem;
+}
+
+.popover-content {
+  position: absolute;
+  padding: 1rem;
+
+  // debug
+  box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+  border: 1px #e1e4e8 solid;
+  width: 232px;
+}
+
+.popover-content::after {
+  border: 7px solid transparent;
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+$border-color: #000000;
+$offset: -14px;
+
+$directions: (
+  top: (
+    border-bottom-color: $border-color,
+    left: 50%,
+    top: $offset,
+    transform: translateX(-50%),
+  ),
+  bottom: (
+    border-top-color: $border-color,
+    left: 50%,
+    bottom: $offset,
+    transform: translateX(-50%),
+  ),
+  left: (
+    border-right-color: $border-color,
+    top: 50%,
+    left: $offset,
+    transform: translateY(-50%),
+  ),
+  right: (
+    border-left-color: $border-color,
+    top: 50%,
+    right: $offset,
+    transform: translateY(-50%),
+  ),
+);
+
+@each $direction, $declarations in $directions {
+  .popover--#{$direction} .popover-content::after {
+    @each $property, $value in $declarations {
+      #{$property}: $value;
+    }
+  }
+}
