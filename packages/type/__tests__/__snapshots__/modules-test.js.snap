@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@carbon/type Public API 1`] = `
+Array [
+  "font-families",
+  "font-weights",
+  "type-scale",
+]
+`;
+
+exports[`@carbon/type Public API 2`] = `
+Array [
+  "font-family",
+  "font-weight",
+  "get-type-size",
+  "type-scale",
+]
+`;
+
+exports[`@carbon/type Public API 3`] = `
+Array [
+  "type-scale",
+  "font-size",
+  "font-family",
+  "font-weight",
+]
+`;
+
+exports[`@carbon/type scss/modules/_font-family.scss $font-families 1`] = `
+Object {
+  "mono": "'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace",
+  "sans": "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif",
+  "sans-condensed": "'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif",
+  "sans-hebrew": "'IBM Plex Sans Hebrew', 'Helvetica Hebrew', 'Arial Hebrew', sans-serif",
+  "serif": "'IBM Plex Serif', 'Georgia', Times, serif",
+}
+`;
+
+exports[`@carbon/type scss/modules/_font-family.scss $font-weights 1`] = `
+Object {
+  "light": 300,
+  "regular": 400,
+  "semibold": 600,
+}
+`;
+
+exports[`@carbon/type scss/modules/_scale.scss $type-scale 1`] = `
+Array [
+  "0.75rem",
+  "0.875rem",
+  "1rem",
+  "1.125rem",
+  "1.25rem",
+  "1.5rem",
+  "1.75rem",
+  "2rem",
+  "2.25rem",
+  "2.625rem",
+  "3rem",
+  "3.375rem",
+  "3.75rem",
+  "4.25rem",
+  "4.75rem",
+  "5.25rem",
+  "5.75rem",
+  "6.375rem",
+  "7rem",
+  "7.625rem",
+  "8.25rem",
+  "9rem",
+  "9.75rem",
+]
+`;

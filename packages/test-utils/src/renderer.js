@@ -7,6 +7,7 @@
 
 'use strict';
 
+const CSSOM = require('cssom');
 const sass = require('sass');
 const { Importer } = require('./importer');
 
@@ -16,6 +17,7 @@ const SassRenderer = {
 
     async function render(data) {
       const values = [];
+      const namedValues = new Map();
       const result = sass.renderSync({
         data: `${initialData}\n${data}`,
         importer,
@@ -24,14 +26,51 @@ const SassRenderer = {
             values.push(arg);
             return sass.types.Null.NULL;
           },
+          'get($name, $arg)': (name, arg) => {
+            namedValues.set(convert(name), convert(arg));
+            return sass.types.Null.NULL;
+          },
         },
       });
+
+      let stylesheet = null;
 
       return {
         result,
         values,
+        get(key) {
+          if (namedValues.has(key)) {
+            return namedValues.get(key);
+          }
+          throw new Error(`No value available with key: ${key}`);
+        },
         getValue(index) {
           return convert(values[index]);
+        },
+        getStyleSheet() {
+          if (stylesheet) {
+            return stylesheet;
+          }
+
+          const cssom = CSSOM.parse(result.css.toString());
+          stylesheet = {
+            getRule(selector) {
+              const rule = cssom.cssRules.find((rule) => {
+                return rule.selectorText === selector;
+              });
+              if (!rule) {
+                throw new Error(
+                  `Unable to find CSS Rule with selector ${selector}`
+                );
+              }
+              return rule;
+            },
+            getValue(rule, property) {
+              return rule.style[property];
+            },
+          };
+
+          return stylesheet;
         },
       };
     }
