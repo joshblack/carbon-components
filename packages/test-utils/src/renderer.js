@@ -15,11 +15,16 @@ const SassRenderer = {
     const importer = Importer.create(cwd);
 
     async function render(data) {
+      const namedValues = new Map();
       const values = [];
       const result = sass.renderSync({
         data: `${initialData}\n${data}`,
         importer,
         functions: {
+          'get($name, $arg)': (name, arg) => {
+            namedValues.set(convert(name), convert(arg));
+            return sass.types.Null.NULL;
+          },
           'get-value($arg)': (arg) => {
             values.push(arg);
             return sass.types.Null.NULL;
@@ -30,6 +35,12 @@ const SassRenderer = {
       return {
         result,
         values,
+        get(key) {
+          if (namedValues.has(key)) {
+            return namedValues.get(key);
+          }
+          throw new Error(`Unable to find a value with key: \`${key}\``);
+        },
         getValue(index) {
           return convert(values[index]);
         },
