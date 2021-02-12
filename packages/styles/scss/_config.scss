@@ -1,0 +1,47 @@
+//
+// Copyright IBM Corp. 2018, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+/// If true, includes font face mixins in `_css--font-face.scss` depending on the `css--plex` feature flag
+/// @access public
+/// @type Bool
+/// @group feature-flags
+$css--font-face: true !default;
+
+/// If true, includes the `css-helpers()` mixin
+/// @access public
+/// @type Bool
+/// @group feature-flags
+$css--helpers: true !default;
+
+/// If true, includes the `css-body()` mixin
+/// @access public
+/// @type Bool
+/// @group feature-flags
+$css--body: true !default;
+
+/// If true, include reset CSS
+/// @access public
+/// @type Bool
+/// @group feature-flags
+$css--reset: true !default;
+
+/// If true, include default type
+/// @access public
+/// @type Bool
+/// @group feature-flags
+$css--default-type: true !default;
+
+/// Used with `css--font-face` feature flag, if true, uses Plex font families instead of Helvetica
+/// @access public
+/// @type Bool
+/// @group feature-flags
+$css--plex: true !default;
+
+/// Sets the prefix for all classes
+/// @access public
+/// @type String
+$prefix: 'bx' !default;

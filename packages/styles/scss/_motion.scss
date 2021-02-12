@@ -1,0 +1,78 @@
+//
+// Copyright IBM Corp. 2018, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@forward '@carbon/motion';
+
+/// Expansion duration
+/// @type Number
+/// @access public
+/// @group global-motion
+$fast-01: 70ms;
+
+/// Expansion duration
+/// @type Number
+/// @access public
+/// @group global-motion
+$fast-02: 110ms;
+
+/// Expansion duration
+/// @type Number
+/// @access public
+/// @group global-motion
+$moderate-01: 150ms;
+
+/// Expansion duration
+/// @type Number
+/// @access public
+/// @group global-motion
+$moderate-02: 240ms;
+
+/// Expansion duration
+/// @type Number
+/// @access public
+/// @group global-motion
+$slow-01: 400ms;
+
+/// Expansion duration
+/// @type Number
+/// @access public
+/// @group global-motion
+$slow-02: 720ms;
+
+/// Used for the majority of animations
+/// @type Function
+/// @access public
+/// @group global-motion
+$standard-easing: cubic-bezier(0.5, 0, 0.1, 1);
+
+/// Default ease-in for components
+/// @access public
+/// @type Function
+/// @group global-motion
+$ease-in: cubic-bezier(0, 0, 0.38, 0.9);
+
+/// Default ease-out for components
+/// @access public
+/// @type Function
+/// @group global-motion
+$ease-out: cubic-bezier(0.2, 0, 1, 0.9);
+
+/// Default easing for components
+/// @access public
+/// @type Function
+/// @group global-motion
+$easing: cubic-bezier(0.2, 0, 0.38, 0.9);
+
+/// @access public
+/// @group global-motion
+/// @alias duration--fast-02
+$transition--base: $fast-02;
+
+/// @access public
+/// @group global-motion
+/// @alias duration--moderate-02
+$transition--expansion: $moderate-02;
