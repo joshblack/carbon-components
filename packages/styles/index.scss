@@ -5,14 +5,23 @@
 // LICENSE file in the root directory of this source tree.
 //
 
+@forward 'scss/config' with (
+  $css--body: true !default,
+  $css--default-type: true !default,
+  $css--font-face: true !default,
+  $css--helpers: true !default,
+  $css--reset: true !default,
+  $css--plex: true !default,
+  $prefix: 'bx' !default,
+);
+
 @forward 'scss/colors';
 @forward 'scss/grid';
 @forward 'scss/layout';
 @forward 'scss/motion';
 @forward 'scss/theme';
-@forward 'scss/type';
+@forward 'scss/type' hide $prefix;
 
-// @use 'scss/reset';
-// @use 'scss/grid';
-
-// @include grid.grid();
+@use 'scss/reset';
+@use 'scss/grid';
+@use 'scss/components';

@@ -32,22 +32,25 @@ module.exports = {
     '@storybook/addon-links',
     CARBON_REACT_STORYBOOK_USE_CUSTOM_PROPERTIES === 'true' &&
       require.resolve('./dist/preset.js'),
-  ],
+  ].filter(Boolean),
 
   webpack(config) {
     const sassLoader = {
       loader: 'sass-loader',
       options: {
-        prependData() {
-          return `
+        implementation: require('sass'),
+        additionalData(content) {
+          const preamble = `
             $feature-flags: (
               ui-shell: true,
               enable-css-custom-properties: ${CARBON_REACT_STORYBOOK_USE_CUSTOM_PROPERTIES},
             );
           `;
+
+          return `${preamble}\n${content}`;
         },
         sassOptions: {
-          includePaths: [path.resolve(__dirname, '..', 'node_modules')],
+          includePaths: [path.resolve(__dirname, '..', '..', 'node_modules')],
         },
         sourceMap: true,
       },
@@ -115,7 +118,7 @@ module.exports = {
             sourceMap: true,
           },
         },
-        NODE_ENV === 'production' ? sassLoader : fastSassLoader,
+        sassLoader,
       ],
     });
 

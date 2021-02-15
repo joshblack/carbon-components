@@ -25,7 +25,7 @@
   }
 }
 
-@if config.$css--reset {
+@if config.$css--reset == true {
   // http://cssreset.com/scripts/eric-meyer-reset-css/
   html,
   body,
@@ -179,8 +179,14 @@
     border-spacing: 0;
   }
 
-  * {
+  html {
     box-sizing: border-box;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 
   // Fix to remove added margins on buttons in safari (see #5155)
@@ -188,6 +194,7 @@
     margin: 0;
   }
 
-  @include carbon--type-reset;
-  @include carbon--icons;
+  // TODO
+  // @include carbon--type-reset;
+  // @include carbon--icons;
 }
