@@ -1,0 +1,27 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use 'data-table-action';
+@use 'data-table-core';
+@use 'data-table-expandable';
+@use 'data-table-sort';
+// @use 'data-table-inline-edit';
+@use 'data-table-skeleton';
+
+@include data-table-action.data-table-action;
+@include data-table-core.data-table-core;
+@include data-table-expandable.data-table-expandable;
+@include data-table-sort.data-table-sort;
+// @include data-table-inline-edit.data-table-inline-edit;
+// @include data-table-skeleton.data-table-skeleton;
+
+// @import 'data-table-action';
+// @import 'data-table-core';
+// @import 'data-table-expandable';
+// @import 'data-table-sort';
+// @import 'data-table-inline-edit';
+// @import 'data-table-skeleton';

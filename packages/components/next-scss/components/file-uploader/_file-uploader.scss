@@ -1,0 +1,340 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../css--reset' as *;
+@use '../../helper-mixins' as *;
+@use '../../layout';
+@use '../../motion' as *;
+@use '../../settings' as *;
+@use '../../theme' as *;
+@use '../../type';
+@use '../button';
+@use '../form';
+@use '../loading';
+
+/// File uploader styles
+/// @access private
+/// @group file-uploader
+@mixin file-uploader {
+  .#{$prefix}--file {
+    width: 100%;
+  }
+
+  .#{$prefix}--file--invalid {
+    margin-right: $spacing-03;
+    fill: $support-01;
+  }
+
+  // TODO: sync with type
+  .#{$prefix}--file--label {
+    @include reset;
+    @include type.type-style('productive-heading-01');
+
+    margin-bottom: $spacing-03;
+    color: $text-01;
+  }
+
+  .#{$prefix}--file--label--disabled {
+    color: $disabled-02;
+  }
+
+  .#{$prefix}--file-input {
+    @include hidden;
+  }
+
+  // This class is of old markup with "select file" button
+  // New code should use link-style "select file" UI (`.bx--file-browse-btn`)
+  // TODO: deprecate this block
+  .#{$prefix}--file-btn {
+    display: inline-flex;
+    margin: 0;
+    padding-right: layout.rem(64px);
+  }
+
+  .#{$prefix}--file-browse-btn {
+    display: inline-block;
+    width: 100%;
+    max-width: layout.rem(320px);
+    margin-bottom: $spacing-03;
+    color: $link-01;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    cursor: pointer;
+    transition: $duration--fast-02 motion(standard, productive);
+
+    &:focus,
+    &:hover {
+      outline: 2px solid $interactive-03;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:visited {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $text-01;
+    }
+  }
+
+  .#{$prefix}--file-browse-btn--disabled {
+    color: $disabled-02;
+    text-decoration: none;
+    cursor: no-drop;
+
+    &:hover,
+    &:focus {
+      color: $disabled-02;
+      text-decoration: none;
+      outline: none;
+    }
+  }
+
+  .#{$prefix}--file-browse-btn--disabled .#{$prefix}--file__drop-container {
+    border: 1px dashed $disabled-02;
+  }
+
+  .#{$prefix}--label-description {
+    @include reset;
+    @include type.type-style('body-short-01');
+
+    margin-bottom: $spacing-05;
+    color: $text-02;
+  }
+
+  .#{$prefix}--label-description--disabled {
+    color: $disabled-02;
+  }
+
+  // For backwards compatibility
+  .#{$prefix}--file-btn ~ .#{$prefix}--file-container {
+    margin-top: $spacing-06;
+  }
+
+  .#{$prefix}--btn ~ .#{$prefix}--file-container {
+    margin-top: $spacing-05;
+  }
+
+  .#{$prefix}--file .#{$prefix}--file-container,
+  .#{$prefix}--file ~ .#{$prefix}--file-container {
+    margin-top: $spacing-03;
+  }
+
+  .#{$prefix}--file__selected-file {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr auto;
+    gap: layout.rem(12px) $spacing-05;
+    align-items: center;
+    max-width: layout.rem(320px);
+    min-height: $spacing-09;
+    margin-bottom: $spacing-03;
+    word-break: break-word;
+    background-color: $field-01;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .#{$prefix}--form-requirement {
+      display: block;
+      grid-column: 1 / -1;
+      max-height: none;
+      margin: 0;
+    }
+
+    .#{$prefix}--inline-loading__animation .#{$prefix}--loading {
+      // Vanilla markup has `.bx--inline-loading__animation` which is used for `margin-right` adjustment
+      margin-right: 0;
+    }
+
+    .#{$prefix}--file-filename {
+      @include type.type-style('body-short-01');
+
+      margin-left: $spacing-05;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    // Windows, Firefox HCM Fix
+    @media screen and (-ms-high-contrast: active),
+      screen and (prefers-contrast) {
+      outline: 2px solid transparent;
+    }
+  }
+
+  .#{$prefix}--file__selected-file--field {
+    gap: $spacing-03 $spacing-05;
+    min-height: layout.rem(40px);
+  }
+
+  .#{$prefix}--file__selected-file--sm {
+    gap: $spacing-02 $spacing-05;
+    min-height: layout.rem(32px);
+  }
+
+  // TODO: deprecate this block
+  .#{$prefix}--file__selected-file--invalid__wrapper {
+    @include focus-outline('invalid');
+
+    max-width: layout.rem(320px);
+    margin-bottom: $spacing-03;
+    background-color: $field-01;
+    outline-width: 1px;
+  }
+
+  .#{$prefix}--file__selected-file--invalid {
+    @include focus-outline('invalid');
+
+    padding: layout.rem(12px) 0;
+  }
+
+  .#{$prefix}--file__selected-file--invalid.#{$prefix}--file__selected-file--sm {
+    padding: $spacing-02 0;
+  }
+
+  .#{$prefix}--file__selected-file--invalid.#{$prefix}--file__selected-file--field {
+    padding: $spacing-03 0;
+  }
+
+  .#{$prefix}--file__selected-file--invalid .#{$prefix}--form-requirement {
+    padding-top: $spacing-05;
+    border-top: 1px solid $ui-03;
+  }
+
+  .#{$prefix}--file__selected-file--invalid.#{$prefix}--file__selected-file--sm
+    .#{$prefix}--form-requirement {
+    padding-top: layout.rem(7px);
+  }
+
+  .#{$prefix}--file__selected-file--invalid.#{$prefix}--file__selected-file--field
+    .#{$prefix}--form-requirement {
+    padding-top: layout.rem(11px);
+  }
+
+  .#{$prefix}--file__selected-file--invalid
+    .#{$prefix}--form-requirement__title,
+  .#{$prefix}--file__selected-file--invalid
+    .#{$prefix}--form-requirement__supplement {
+    @include type.type-style('label-01');
+
+    padding: 0 $spacing-05;
+  }
+
+  .#{$prefix}--file__selected-file--invalid
+    .#{$prefix}--form-requirement__title {
+    color: $text-error;
+  }
+
+  .#{$prefix}--file__selected-file--invalid
+    .#{$prefix}--form-requirement__supplement {
+    color: $text-01;
+  }
+
+  // TODO: deprecate
+  .#{$prefix}--file__selected-file--invalid + .#{$prefix}--form-requirement {
+    @include type.type-style('caption-01');
+
+    display: block;
+    max-height: layout.rem(200px);
+    padding: $spacing-03 $spacing-05;
+    overflow: visible;
+    color: $text-error;
+    font-weight: 400;
+  }
+
+  .#{$prefix}--file__selected-file--invalid
+    + .#{$prefix}--form-requirement
+    .#{$prefix}--form-requirement__supplement {
+    padding-bottom: $spacing-03;
+    color: $text-01;
+  }
+
+  .#{$prefix}--file__state-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    padding-right: $spacing-05;
+
+    .#{$prefix}--loading__svg {
+      stroke: $ui-05;
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-complete {
+    cursor: pointer;
+    fill: $interactive-04;
+
+    &:focus {
+      @include focus-outline('border');
+    }
+
+    // for checkmark contrast
+    [data-icon-path='inner-path'] {
+      opacity: 1;
+      fill: $icon-03;
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-invalid {
+    width: $spacing-05;
+    height: $spacing-05;
+    fill: $support-01;
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $spacing-06;
+    height: $spacing-06;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    fill: $icon-01;
+
+    &:focus {
+      @include focus-outline('outline');
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--file-close svg path {
+    fill: $icon-01;
+
+    // Windows, Firefox HCM Fix
+    @media screen and (-ms-high-contrast: active),
+      screen and (prefers-contrast) {
+      // `ButtonText` is a CSS2 system color to help improve colors in HCM
+      fill: ButtonText;
+    }
+  }
+
+  .#{$prefix}--file__state-container .#{$prefix}--inline-loading__animation {
+    margin-right: -$spacing-03;
+  }
+
+  .#{$prefix}--file__drop-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: layout.rem(96px);
+    padding: $spacing-05;
+    overflow: hidden;
+    border: 1px dashed $ui-04;
+  }
+
+  .#{$prefix}--file__drop-container--drag-over {
+    background: none;
+    outline: 2px solid $interactive-03;
+    outline-offset: -2px;
+  }
+}

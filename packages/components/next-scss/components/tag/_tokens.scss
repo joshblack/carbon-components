@@ -1,0 +1,782 @@
+//
+// Copyright IBM Corp. 2020
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../colors';
+@use '../../theme' as *;
+
+// prettier-ignore
+$tag-colors: (
+  // red
+  'tag-background-red': (
+    fallback: colors.$red-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$red-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$red-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$red-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$red-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$red-20,
+      // ),
+    ),
+  ),
+  'tag-color-red': (
+    fallback: colors.$red-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$red-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$red-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$red-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$red-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$red-80,
+      // ),
+    ),
+  ),
+  'tag-hover-red': (
+    fallback: colors.$red-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$red-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$red-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$red-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$red-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$red-30,
+      // ),
+    ),
+  ),
+
+  // magenta
+  'tag-background-magenta': (
+    fallback: colors.$magenta-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$magenta-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$magenta-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$magenta-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$magenta-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$magenta-20,
+      // ),
+    ),
+  ),
+  'tag-color-magenta': (
+    fallback: colors.$magenta-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$magenta-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$magenta-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$magenta-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$magenta-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$magenta-80,
+      // ),
+    ),
+  ),
+  'tag-hover-magenta': (
+    fallback: colors.$magenta-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$magenta-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$magenta-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$magenta-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$magenta-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$magenta-30,
+      // ),
+    ),
+  ),
+
+  // purple
+  'tag-background-purple': (
+    fallback: colors.$purple-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$purple-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$purple-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$purple-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$purple-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$purple-20,
+      // ),
+    ),
+  ),
+  'tag-color-purple': (
+    fallback: colors.$purple-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$purple-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$purple-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$purple-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$purple-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$purple-80,
+      // ),
+    ),
+  ),
+  'tag-hover-purple': (
+    fallback: colors.$purple-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$purple-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$purple-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$purple-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$purple-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$purple-30,
+      // ),
+    ),
+  ),
+
+  // blue
+  'tag-background-blue': (
+    fallback: colors.$blue-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$blue-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$blue-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$blue-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$blue-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$blue-20,
+      // ),
+    ),
+  ),
+  'tag-color-blue': (
+    fallback: colors.$blue-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$blue-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$blue-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$blue-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$blue-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$blue-80,
+      // ),
+    ),
+  ),
+  'tag-hover-blue': (
+    fallback: colors.$blue-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$blue-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$blue-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$blue-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$blue-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$blue-30,
+      // ),
+    ),
+  ),
+
+  // cyan
+  'tag-background-cyan': (
+    fallback: colors.$cyan-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$cyan-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$cyan-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$cyan-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$cyan-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$cyan-20,
+      // ),
+    ),
+  ),
+  'tag-color-cyan': (
+    fallback: colors.$cyan-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$cyan-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$cyan-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$cyan-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$cyan-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$cyan-80,
+      // ),
+    ),
+  ),
+  'tag-hover-cyan': (
+    fallback: colors.$cyan-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$cyan-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$cyan-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$cyan-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$cyan-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$cyan-30,
+      // ),
+    ),
+  ),
+
+  // teal
+  'tag-background-teal': (
+    fallback: colors.$teal-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$teal-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$teal-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$teal-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$teal-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$teal-20,
+      // ),
+    ),
+  ),
+  'tag-color-teal': (
+    fallback: colors.$teal-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$teal-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$teal-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$teal-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$teal-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$teal-80,
+      // ),
+    ),
+  ),
+  'tag-hover-teal': (
+    fallback: colors.$teal-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$teal-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$teal-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$teal-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$teal-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$teal-30,
+      // ),
+    ),
+  ),
+
+  // green
+  'tag-background-green': (
+    fallback: colors.$green-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$green-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$green-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$green-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$green-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$green-20,
+      // ),
+    ),
+  ),
+  'tag-color-green': (
+    fallback: colors.$green-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$green-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$green-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$green-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$green-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$green-80,
+      // ),
+    ),
+  ),
+  'tag-hover-green': (
+    fallback: colors.$green-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$green-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$green-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$green-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$green-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$green-30,
+      // ),
+    ),
+  ),
+
+  // gray
+  'tag-background-gray': (
+    fallback: colors.$gray-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$gray-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$gray-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$gray-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$gray-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$gray-20,
+      // ),
+    ),
+  ),
+  'tag-color-gray': (
+    fallback: colors.$gray-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$gray-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$gray-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$gray-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$gray-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$gray-80,
+      // ),
+    ),
+  ),
+  'tag-hover-gray': (
+    fallback: colors.$gray-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$gray-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$gray-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$gray-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$gray-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$gray-30,
+      // ),
+    ),
+  ),
+
+  // cool-gray
+  'tag-background-cool-gray': (
+    fallback: colors.$cool-gray-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$cool-gray-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$cool-gray-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$cool-gray-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$cool-gray-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$cool-gray-20,
+      // ),
+    ),
+  ),
+  'tag-color-cool-gray': (
+    fallback: colors.$cool-gray-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$cool-gray-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$cool-gray-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$cool-gray-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$cool-gray-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$cool-gray-80,
+      // ),
+    ),
+  ),
+  'tag-hover-cool-gray': (
+    fallback: colors.$cool-gray-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$cool-gray-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$cool-gray-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$cool-gray-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$cool-gray-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$cool-gray-30,
+      // ),
+    ),
+  ),
+
+  // warm-gray
+  'tag-background-warm-gray': (
+    fallback: colors.$warm-gray-20,
+    values: (
+      (
+        theme: $white,
+        value: colors.$warm-gray-20,
+      ),
+      (
+        theme: $g10,
+        value: colors.$warm-gray-20,
+      ),
+      (
+        theme: $g90,
+        value: colors.$warm-gray-80,
+      ),
+      (
+        theme: $g100,
+        value: colors.$warm-gray-80,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$warm-gray-20,
+      // ),
+    ),
+  ),
+  'tag-color-warm-gray': (
+    fallback: colors.$warm-gray-80,
+    values: (
+      (
+        theme: $white,
+        value: colors.$warm-gray-80,
+      ),
+      (
+        theme: $g10,
+        value: colors.$warm-gray-80,
+      ),
+      (
+        theme: $g90,
+        value: colors.$warm-gray-30,
+      ),
+      (
+        theme: $g100,
+        value: colors.$warm-gray-30,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$warm-gray-80,
+      // ),
+    ),
+  ),
+  'tag-hover-warm-gray': (
+    fallback: colors.$warm-gray-30,
+    values: (
+      (
+        theme: $white,
+        value: colors.$warm-gray-30,
+      ),
+      (
+        theme: $g10,
+        value: colors.$warm-gray-30,
+      ),
+      (
+        theme: $g90,
+        value: colors.$warm-gray-70,
+      ),
+      (
+        theme: $g100,
+        value: colors.$warm-gray-70,
+      ),
+      // (
+        // theme: $v9,
+        // value: colors.$warm-gray-30,
+      // ),
+    ),
+  ),
+);

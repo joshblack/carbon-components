@@ -1,0 +1,140 @@
+//
+// Copyright IBM Corp. 2021
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../colors';
+@use '../../theme' as *;
+
+$v9: ();
+
+// prettier-ignore
+$notification-colors: (
+  'notification-background-error': (
+    fallback: colors.$red-10,
+    values: (
+      (
+        theme: $white,
+        value: colors.$red-10,
+      ),
+      (
+        theme: $g10,
+        value: colors.$red-10,
+      ),
+      (
+        theme: $g90,
+        value: $ui-01,
+      ),
+      (
+        theme: $g100,
+        value: $ui-01,
+      ),
+      (
+        theme: $v9,
+        value: colors.$red-10,
+      ),
+    ),
+  ),
+  'notification-background-success': (
+    fallback: colors.$green-10,
+    values: (
+      (
+        theme: $white,
+        value: colors.$green-10,
+      ),
+      (
+        theme: $g10,
+        value: colors.$green-10,
+      ),
+      (
+        theme: $g90,
+        value: $ui-01,
+      ),
+      (
+        theme: $g100,
+        value: $ui-01,
+      ),
+      (
+        theme: $v9,
+        value: colors.$green-10,
+      ),
+    ),
+  ),
+  'notification-background-info': (
+    fallback: colors.$blue-10,
+    values: (
+      (
+        theme: $white,
+        value: colors.$blue-10,
+      ),
+      (
+        theme: $g10,
+        value: colors.$blue-10,
+      ),
+      (
+        theme: $g90,
+        value: $ui-01,
+      ),
+      (
+        theme: $g100,
+        value: $ui-01,
+      ),
+      (
+        theme: $v9,
+        value: colors.$blue-10,
+      ),
+    ),
+  ),
+  'notification-background-warning': (
+    fallback: mix(colors.$yellow-30, colors.$white-0, 15%),
+    values: (
+      (
+        theme: $white,
+        value: mix(colors.$yellow-30, colors.$white-0, 15%),
+      ),
+      (
+        theme: $g10,
+        value: mix(colors.$yellow-30, colors.$white-0, 15%),
+      ),
+      (
+        theme: $g90,
+        value: $ui-01,
+      ),
+      (
+        theme: $g100,
+        value: $ui-01,
+      ),
+      (
+        theme: $v9,
+        value: mix(colors.$yellow-30, colors.$white-0, 15%),
+      ),
+    ),
+  ),
+  'notification-action-hover': (
+    fallback: colors.$white-0,
+    values: (
+      (
+        theme: $white,
+        value: colors.$white-0,
+      ),
+      (
+        theme: $g10,
+        value: colors.$white-0,
+      ),
+      (
+        theme: $g90,
+        value: $hover-ui,
+      ),
+      (
+        theme: $g100,
+        value: $hover-ui,
+      ),
+      (
+        theme: $v9,
+        value: colors.$white-0,
+      ),
+    ),
+  ),
+);

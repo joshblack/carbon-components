@@ -1,0 +1,74 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use '../../helper-mixins' as *;
+@use '../../layout';
+@use '../../settings' as *;
+@use '../../theme' as *;
+
+// @import '../../globals/scss/helper-mixins';
+// @import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
+// @import '../../globals/scss/vars';
+
+.#{$prefix}--data-table.#{$prefix}--skeleton {
+  th {
+    padding-left: 1rem;
+    vertical-align: middle;
+  }
+
+  th span,
+  td span {
+    @include skeleton;
+
+    display: block;
+
+    width: layout.rem(64px);
+    height: layout.rem(16px);
+  }
+
+  tr:hover {
+    td {
+      background: transparent;
+      border-color: $ui-03;
+
+      &:first-of-type,
+      &:last-of-type {
+        border-color: $ui-03;
+      }
+    }
+  }
+}
+
+.#{$prefix}--data-table.#{$prefix}--skeleton .#{$prefix}--table-sort-v2 {
+  pointer-events: none;
+}
+
+.#{$prefix}--data-table.#{$prefix}--skeleton th span {
+  background: $skeleton-02;
+}
+
+.#{$prefix}--data-table.#{$prefix}--skeleton th span::before {
+  background: $skeleton-01;
+}
+
+.#{$prefix}--data-table-container.#{$prefix}--skeleton
+  .#{$prefix}--data-table-header__title {
+  @include skeleton;
+
+  width: layout.rem(120px);
+  height: layout.rem(24px);
+}
+
+.#{$prefix}--data-table-container.#{$prefix}--skeleton
+  .#{$prefix}--data-table-header__description {
+  @include skeleton;
+
+  width: layout.rem(160px);
+  height: layout.rem(16px);
+
+  margin-top: $spacing-03;
+}

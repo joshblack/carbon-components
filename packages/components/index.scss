@@ -1,4 +1,54 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use './next-scss/css--helpers';
+@use './next-scss/grid';
+
 @use './next-scss/components/accordion';
 @use './next-scss/components/breadcrumb';
 @use './next-scss/components/button';
+@use './next-scss/components/checkbox';
+@use './next-scss/components/code-snippet';
+@use './next-scss/components/combo-box';
+@use './next-scss/components/content-switcher';
+// @use './next-scss/components/context-menu';
+@use './next-scss/components/copy-button';
+@use './next-scss/components/data-table';
+@use './next-scss/components/date-picker';
+@use './next-scss/components/dropdown';
+@use './next-scss/components/file-uploader';
+@use './next-scss/components/form';
+@use './next-scss/components/inline-loading';
 @use './next-scss/components/link';
+@use './next-scss/components/list';
+@use './next-scss/components/list-box';
+@use './next-scss/components/loading';
+@use './next-scss/components/modal';
+@use './next-scss/components/multi-select';
+@use './next-scss/components/notification';
+@use './next-scss/components/number-input';
+@use './next-scss/components/overflow-menu';
+@use './next-scss/components/pagination';
+@use './next-scss/components/pagination-nav';
+@use './next-scss/components/popover';
+@use './next-scss/components/progress-indicator';
+@use './next-scss/components/radio-button';
+@use './next-scss/components/search';
+@use './next-scss/components/select';
+@use './next-scss/components/skeleton';
+@use './next-scss/components/slider';
+@use './next-scss/components/structured-list';
+@use './next-scss/components/tabs';
+@use './next-scss/components/tag';
+@use './next-scss/components/text-area';
+@use './next-scss/components/text-input';
+@use './next-scss/components/tile';
+@use './next-scss/components/time-picker';
+@use './next-scss/components/toggle';
+@use './next-scss/components/tooltip';
+@use './next-scss/components/treeview';
+@use './next-scss/components/ui-shell';

@@ -1,0 +1,111 @@
+//
+// Copyright IBM Corp. 2016, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+//-----------------------------
+// Text area
+//-----------------------------
+
+@use '../../css--reset' as *;
+@use '../../helper-mixins' as *;
+@use '../../layout';
+@use '../../motion' as *;
+@use '../../settings' as *;
+@use '../../theme' as *;
+@use '../../type';
+@use '../form';
+
+// @import '../../globals/scss/vars';
+// @import '../../globals/scss/typography';
+// @import '../../globals/scss/css--reset';
+// @import '../../globals/scss/helper-mixins';
+// @import '../../globals/scss/vendor/@carbon/elements/scss/import-once/import-once';
+// @import '../form/form';
+
+/// Text area styles
+/// @access private
+/// @group text-area
+@mixin text-area {
+  .#{$prefix}--text-area {
+    @include reset;
+    @include type.type-style('body-long-01');
+    @include focus-outline('reset');
+
+    width: 100%;
+    min-width: 10rem;
+    height: 100%;
+    min-height: layout.rem(40px);
+    padding: layout.rem(11px) $spacing-05;
+    color: $text-01;
+    background-color: $field-01;
+    border: none;
+    border-bottom: 1px solid $ui-04;
+    transition: background-color $duration--fast-01 motion(standard, productive),
+      outline $duration--fast-01 motion(standard, productive);
+    resize: vertical;
+  }
+
+  .#{$prefix}--text-area:focus,
+  .#{$prefix}--text-area:active {
+    @include focus-outline('outline');
+  }
+
+  .#{$prefix}--text-area::placeholder {
+    @include placeholder-colors;
+    @include type.type-style('body-long-01');
+  }
+
+  .#{$prefix}--text-area--light {
+    background-color: $field-02;
+  }
+
+  .#{$prefix}--text-area--invalid {
+    padding-right: $spacing-08;
+  }
+
+  .#{$prefix}--text-area__wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  .#{$prefix}--text-area__invalid-icon {
+    position: absolute;
+    top: $spacing-04;
+    right: $spacing-05;
+    fill: $support-01;
+  }
+
+  //-----------------------------
+  // Disabled
+  //-----------------------------
+  .#{$prefix}--text-area:disabled {
+    color: $disabled-02;
+    background-color: $disabled-01;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    cursor: not-allowed;
+  }
+
+  .#{$prefix}--text-area:disabled::placeholder {
+    color: $disabled-02;
+  }
+
+  .#{$prefix}--text-area.#{$prefix}--text-area--light:disabled {
+    background-color: $field-02;
+  }
+
+  // Skeleton State
+  .#{$prefix}--text-area.#{$prefix}--skeleton {
+    @include skeleton;
+
+    height: layout.rem(100px);
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
