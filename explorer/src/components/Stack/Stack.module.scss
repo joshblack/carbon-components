@@ -1,0 +1,34 @@
+//
+// Copyright IBM Corp. 2018, 2018
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+@use 'sass:meta';
+@use '@carbon/styles/scss/spacing';
+
+.stack {
+  --stack-gap: 0;
+
+  display: grid;
+  grid-row-gap: var(--stack-gap);
+}
+
+.hstack {
+  --stack-gap: 0;
+
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-column-gap: var(--stack-gap);
+}
+
+.spacing-0 {
+  --stack-gap: 0;
+}
+
+@each $key, $value in spacing.$spacing {
+  .#{$key} {
+    --stack-gap: #{$value};
+  }
+}

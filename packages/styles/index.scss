@@ -16,4 +16,5 @@
 @forward '@carbon/type' hide $prefix;
 
 @use 'scss/reset';
+@use 'scss/utilities';
 @use 'scss/components';
