@@ -18,12 +18,12 @@ export default function Header() {
       </Link>
       <HStack as="ul" step={5}>
         <li>
-          <Link href="/react">
+          <Link href="/workspaces/carbon-components-react">
             <a>React</a>
           </Link>
         </li>
         <li>
-          <Link href="/styles">
+          <Link href="/workspaces/carbon-components">
             <a>Styles</a>
           </Link>
         </li>

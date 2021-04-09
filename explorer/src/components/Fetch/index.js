@@ -5,13 +5,5 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import Header from '~/components/Header';
-
-export default function ReactPage() {
-  return (
-    <>
-      <Header />
-      <div>React</div>
-    </>
-  );
-}
+export { default as Fetch } from './Fetch';
+export { default as FetchGroup } from './FetchGroup';
