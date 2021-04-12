@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '~/network/useQuery';
 import { useDebugFallback, useDebugErrorBoundary } from './useDebug';
 
-function Fetch({ children, fallback, url, options, ...params }) {
+function Fetch({ children, fallback, url, options, params = {} }) {
   const query = useQuery(url, params, options);
   const [shouldShowFallback, setShouldShowFallback] = useState(false);
   const { loading, error, data } = query;

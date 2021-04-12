@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import { Fetch } from '~/components/Fetch';
 import Header from '~/components/Header';
 import { Stack } from '~/components/Stack';
+import { StyleStatistics } from '~/components/StyleStatistics';
 
 export default function WorkspacePage() {
   const { query } = useRouter();
@@ -26,13 +27,26 @@ export default function WorkspacePage() {
       <ErrorBoundary fallback="Error loading workspace">
         <Fetch url={`/api/workspaces/${name}`} fallback="Loading workspace...">
           {(workspace) => {
-            console.log(workspace);
+            const hasStyleSheets = workspace.files.some((file) => {
+              return file.type === 'scss';
+            });
+            const stylesheets = workspace.files.filter((file) => {
+              return file.type === 'scss';
+            });
+
             return (
               <main>
                 <h1>
                   {workspace.name} <small>{workspace.version}</small>
                 </h1>
                 {workspace.description ? <p>{workspace.description}</p> : null}
+
+                {hasStyleSheets ? (
+                  <section>
+                    <h2>Style Sheets ({stylesheets.length})</h2>
+                    <StyleStatistics workspace={name} />
+                  </section>
+                ) : null}
 
                 <section>
                   <h2>Workspace dependencies</h2>

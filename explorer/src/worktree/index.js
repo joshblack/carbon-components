@@ -81,28 +81,14 @@ export const Workspace = {
       name: entry.name,
       version: entry.packageJson.version,
       description: entry.packageJson.description,
+      directory: entry.directory,
       dependencies: [
         ...getDependencies('peerDependencies'),
         ...getDependencies('devDependencies'),
         ...getDependencies('dependencies'),
       ],
-      entrypoints: getPackageEntrypoints(),
-      // files: getFiles(),
+      files: getFiles(),
     };
-
-    function getPackageEntrypoints() {
-      const javascript = [
-        path.join(entry.directory, 'src', 'index.js'),
-        path.join(entry.directory, pkg.packageJson.module),
-        path.join(entry.directory, pkg.packageJson.main),
-      ];
-      const scss = [
-        path.join(entry.directory, 'scss', 'index.scss'),
-        path.join(entry.directory, 'scss', 'styles.scss'),
-      ];
-
-      return [];
-    }
 
     function getFiles() {
       const matches = glob.sync(['src/**/*.js', 'src/**/*.ts', '**/*.scss'], {
@@ -126,7 +112,13 @@ export const Workspace = {
       });
 
       return matches.map((match) => {
-        return path.join(entry.directory, match);
+        const filepath = path.join(entry.directory, match);
+        return {
+          filepath,
+          relative: match,
+          // Remove leading `.` character
+          type: path.extname(filepath).slice(1),
+        };
       });
     }
 

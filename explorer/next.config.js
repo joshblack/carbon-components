@@ -15,6 +15,7 @@ module.exports = {
   },
   webpack(config) {
     config.resolve.alias['~'] = path.join(__dirname, 'src');
+    config.externals = ['cssstats', 'sass'];
     return config;
   },
 };

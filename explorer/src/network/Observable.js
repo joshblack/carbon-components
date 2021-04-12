@@ -16,7 +16,7 @@ export class Observable {
     }
 
     if (args.length === 1) {
-      if (typeof args === 'object') {
+      if (typeof args[0] === 'object') {
         return subscribe(this._source, args[0]);
       }
 
