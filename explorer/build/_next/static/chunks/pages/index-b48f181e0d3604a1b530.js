@@ -1,1 +1,0 @@
-_N_E=(window.webpackJsonp_N_E=window.webpackJsonp_N_E||[]).push([[6],{RXBc:function(n,o,u){"use strict";function _(){return"Hello"}u.r(o),u.d(o,"default",(function(){return _}))},vlRD:function(n,o,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/",function(){return u("RXBc")}])}},[["vlRD",0]]]);

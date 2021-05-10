@@ -13,6 +13,7 @@
       "codemods",
       "config/*",
       "explorer",
+      "explorer2",
       "packages/*"
     ],
     "nohoist": []

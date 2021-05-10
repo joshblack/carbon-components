@@ -14,6 +14,8 @@ module.exports = {
     webpack5: true,
   },
   webpack(config) {
+    // config.resolve.alias.react = require.resolve('react');
+    // config.resolve.alias['react-dom'] = require.resolve('react-dom');
     config.resolve.alias['~'] = path.join(__dirname, 'src');
     config.externals = ['cssstats', 'sass'];
     return config;
