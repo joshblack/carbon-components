@@ -9,6 +9,7 @@ import * as white from './white';
 import * as g10 from './g10';
 import * as g90 from './g90';
 import * as g100 from './g100';
+import { theme } from './tokens';
 
 export const themes = {
   white,
@@ -16,3 +17,5 @@ export const themes = {
   g90,
   g100,
 };
+
+export { theme };

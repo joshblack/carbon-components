@@ -10,9 +10,13 @@
 import { themes } from '../';
 import { tokens } from '../tokens';
 
+const tokenList = tokens.getTokens().map((token) => {
+  return token.getName('javascript');
+});
+
 describe('themes', () => {
   describe.each(Object.entries(themes))('%s', (_name, theme) => {
-    test.each(tokens)('%s should exist', (token) => {
+    test.each(tokenList)('%s should exist', (token) => {
       expect(theme[token]).toBeDefined();
     });
   });

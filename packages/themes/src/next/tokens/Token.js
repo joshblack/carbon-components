@@ -15,44 +15,16 @@ export class Token {
     return new Token(name, properties, state, states);
   }
 
-  constructor(name, properties = {}, state, states = []) {
+  constructor(name, properties, state, states = []) {
     this.kind = 'Token';
     this.name = name;
-    this.properties = properties;
-    this.state = state;
-    this.children = states.map((child) => {
-      return Token.create(child);
-    });
-  }
 
-  getTokens() {
-    return [
-      this,
-      ...this.children.flatMap((state) => {
-        return state.getTokens();
-      }),
-    ];
-  }
-
-  getName(format) {
-    const keywords = new Set(['ui']);
-
-    if (format === 'javascript') {
-      return this.name
-        .split('-')
-        .map((part, index) => {
-          if (index === 0) {
-            return part;
-          }
-
-          if (keywords.has(part)) {
-            return part.toUpperCase();
-          }
-
-          return part[0].toUpperCase() + part.slice(1);
-        })
-        .join('');
+    if (properties) {
+      this.properties = properties;
     }
-    return this.name;
+
+    if (state) {
+      this.state = state;
+    }
   }
 }
